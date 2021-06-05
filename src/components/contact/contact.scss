@@ -2,12 +2,12 @@
     width:35% ;
     height:50%;
     background:rgba(255, 255, 255, 0.89);
-    // display: flex;
-    // justify-content: center;
-    // flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 20px;
     position: relative;
-    top: 30%;
+    top: 25%;
     left: 30%;
     border-radius: 10px;
 }
@@ -21,20 +21,12 @@
         content: "";
         display: block; 
         margin-left:10px; 
-        width: 15%; 
+        width: 30%; 
         padding-top: 10px;
         border-bottom: 3px solid #ef2853; 
     }
     .par2{
     font-family:Verdana, Geneva, Tahoma, sans-serif ;
     font-size: 17px;
-    margin-top: 10%;
     
-    }
-    .img2{
-    z-index: 5;
-    width: 430px;
-    height: 130px;
-    position: absolute;
-    margin-left: 35%;
-    }
+}

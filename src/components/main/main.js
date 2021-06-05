@@ -14,7 +14,7 @@ function Main () {
                 {/* <Roll right> */}
                <h1 className='sub'> We can teach you</h1> 
               
-               <p className='par'>Knowledge is power <br/> Your Education is Your Passport <br/> <br/> Build your Future</p>
+               <p className='par'> Education is Our Passport to the future , for tomorrow belongs to the people who prepare for it today <br/> <br/> <strong> Build your Future</strong> <br/> <br/> <strong>Knowledge is power</strong> </p>
 
                 </div>
                 {/* </Roll> */}
