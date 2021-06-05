@@ -1,7 +1,7 @@
 .container{
 	text-align: center;
-	margin-top: 100px;
-    width: 500px;
+	margin-top: 30px;
+    width: 400px;
     border: black 1px;
 }
 
@@ -10,15 +10,15 @@
 // display: flex;
 align-items: center;
 // width: 350px;
-width: 430px;
+width: 295px;
 margin: 0 auto;
 padding: 10px;
 }
 
 
- li{
+ .list{
 	cursor: pointer;
-	opacity: .5;
+	opacity: .8;
 	transition: all .2s ease;
 	
 	&:hover{
@@ -29,21 +29,13 @@ padding: 10px;
 	opacity: 1;
        }
 		
-//     &:nth-of-type(4){
-//     margin-left: 15px;
-//    }
-		
-	
-//    &:last-of-type{
-//      margin-left: auto
-//     }
-		
     }
 .account-form{
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	margin-top: 30px;
-    width: 450px;
+    width: 340px;
     text-align: center;
     margin: 0 auto;
     padding: 10px;
@@ -109,8 +101,42 @@ padding: 10px;
 	font-family: Nunito, sans-serif;
 	box-shadow: 0px 1px 2px rgba(0,0,0,.13);
 	transition: all .2s ease;
+	
 }
 .btn-custom {
-    background-color: brown;
+    background-color: #ef2853;
 
+}
+.sighIn{
+    width:26% ;
+    height:62%;
+    background:rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 20px;
+    position: relative;
+    top: 20%;
+    // left: 20%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.sign{
+	width: 22%;
+	height: 62%;
+	// float:left;
+	background-color: #ef2853;
+	border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	position: relative;
+    top: 20%;
+}
+.join{
+	color: #fff;
+	font-size: 60px;
+	font-family: cursive;
+	padding: 55px;
+	text-align: center;
 }

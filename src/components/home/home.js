@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Main from '../main/main';
 import About from '../about/about';
 import Contact from '../contact/contact';
+import Sign from '../sign/sign-in';
 import './home.scss';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
-import ReactPageScroller from 'react-page-scroller';
+// import ReactPageScroller from 'react-page-scroller';
 
 function Home() {
   //react-page-scroller
@@ -56,6 +57,9 @@ function Home() {
           </SplideSlide>
           <SplideSlide>
             <Contact />
+          </SplideSlide>
+          <SplideSlide>
+            <Sign />
           </SplideSlide>
         </Splide>
       </ReactScrollWheelHandler>
