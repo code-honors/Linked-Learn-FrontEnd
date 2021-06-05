@@ -1,0 +1,53 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100vh;
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.navbar ul {
+	list-style: none;
+	text-align: right;
+}
+
+.navbar ul li {
+	color: #fff;
+	font-size: 2em;
+	padding-right: 20px;
+	display: inline;
+}
+
+.main-section {
+	height: 100vh;
+	width: 100%;
+	background-color: aquamarine;
+}
+
+.navbar > .ruba {
+	border-bottom: 1px solid white;
+}
+
+.about-section {
+	height: 100vh;
+	width: 100%;
+	background-color: blueviolet;
+}
+
+.contact-section {
+	height: 100vh;
+	width: 100%;
+	background-color: coral;
+}
+
+.container > .active {
+	display: block;
+}

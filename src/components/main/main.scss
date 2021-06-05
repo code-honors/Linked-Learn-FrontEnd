@@ -1,0 +1,41 @@
+.home{
+    width:45% ;
+    height:50%;
+    background:rgba(255, 255, 255, 0.89);
+    margin-top:10%;
+    margin-right:10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    z-index: 2;
+    border-radius: 10px;
+}
+.sub{
+font-size: 50px;
+font-family:Verdana, Geneva, Tahoma, sans-serif ;
+color: rgb(22, 22, 22);
+}
+.sub:after {
+    content: "";
+    display: block; 
+    margin-left:10px; 
+    width: 15%; 
+    padding-top: 10px;
+    border-bottom: 3px solid #ef2853; 
+}
+.par{
+font-family:Verdana, Geneva, Tahoma, sans-serif ;
+font-size: 25px;
+margin-top: -15%;
+
+
+}
+.img1{
+z-index: 5;
+width: 420px;
+height: 150px;
+position: absolute;
+margin-right: 5%;
+margin-top: 25%;
+}

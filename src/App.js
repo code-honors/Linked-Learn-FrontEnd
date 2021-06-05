@@ -1,12 +1,13 @@
-import React from 'react';
-import About from './components/about/about.js';
+
+import Routes from './routes';
+
 function App() {
   return (
-
-    <div>
-      <About />
-    </div>
+    <>
+      <Routes />
+    </>
   )
 }
 
 export default App;
+
