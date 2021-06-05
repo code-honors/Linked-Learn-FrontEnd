@@ -1,14 +1,14 @@
 .contact{
     width:35% ;
-    height:50%;
-    background:rgba(255, 255, 255, 0.89);
+    height:59%;
+    background:rgba(255, 255, 255, 0.95);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px;
     position: relative;
-    top: 25%;
-    left: 30%;
+    top: 23%;
+    left: 33%;
     border-radius: 10px;
 }
 
@@ -17,6 +17,7 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif ;
     color: rgb(22, 22, 22);
     }
+
     .sub2:after {
         content: "";
         display: block; 
@@ -25,6 +26,7 @@
         padding-top: 10px;
         border-bottom: 3px solid #ef2853; 
     }
+
     .par2{
     font-family:Verdana, Geneva, Tahoma, sans-serif ;
     font-size: 17px;
