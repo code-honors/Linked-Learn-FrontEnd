@@ -1,13 +1,11 @@
-import Home from './components/home/home';
 
-import Contact from './components/contact/contact';
-// import './app.css'
+import Routes from './routes';
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <>
+      <Routes />
+    </>
   )
 }
 
