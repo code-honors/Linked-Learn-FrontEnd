@@ -8,46 +8,34 @@
 	height: 100vh;
 }
 
-.navbar {
-	position: fixed;
-	top: 0;
-	width: 100%;
-}
 
-.navbar ul {
-	list-style: none;
-	text-align: right;
-}
-
-.navbar ul li {
-	color: #fff;
-	font-size: 2em;
-	padding-right: 20px;
-	display: inline;
-}
 
 .main-section {
 	height: 100vh;
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
-	background-image: url(https://academist.qodeinteractive.com/wp-content/uploads/2018/07/slider-home-3.jpg);
+	background-image: url(https://academist.qodeinteractive.com/wp-content/uploads/2018/07/slider-home-1.jpg);
+	background-size: cover;
+	z-index: 1;
 }
 
-.navbar > .ruba {
-	border-bottom: 1px solid white;
-}
+
 
 .about-section {
 	height: 100vh;
 	width: 100%;
 	background-image: url(https://academist.qodeinteractive.com/wp-content/uploads/2018/07/slider-home-2.jpg);
+	background-size: cover;
+	z-index: 1;
 }
 
 .contact-section {
 	height: 100vh;
 	width: 100%;
-	background-image: url(https://academist.qodeinteractive.com/wp-content/uploads/2018/07/slider-home-1.jpg);
+	background-image: url(https://academist.qodeinteractive.com/wp-content/uploads/2018/07/slider-home-3.jpg);
+	background-size: cover;
+	z-index: 1;
 }
 
 .container > .active {

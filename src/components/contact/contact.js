@@ -10,7 +10,13 @@ class Contact extends Component {
                 <Fade right>
                 <div className='contact' >
                 {/* <Roll right> */}
-               <h1> We can teach you</h1>
+               <h1 className='sub2'> Find Us</h1>
+               <p className='par2'>
+                Contact us on :
+                Linked-Learn@gmail.com <br/> <br/>
+                Or Call us on :
+                0799999990
+               </p>
                 </div>
                 {/* </Roll> */}
               </Fade>
