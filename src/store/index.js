@@ -1,12 +1,12 @@
-// import products from './products-reducer'
+import courses from './courses';
 
-import {createStore, combineReducers, applyMiddleware} from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-let reducers = combineReducers({});
+let reducers = combineReducers({ courses });
 
 const store = () => {
-    return createStore(reducers, applyMiddleware(thunk))
-}
+  return createStore(reducers, applyMiddleware(thunk));
+};
 
 export default store();
