@@ -8,6 +8,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
+
 // import ReactPageScroller from 'react-page-scroller';
 
 function Home() {
@@ -46,7 +47,7 @@ function Home() {
             arrows: false,
             autoplay: true,
             interval: 5000,
-            pauseOnHover: false,
+            pauseOnHover: true,
           }}
         >
           <SplideSlide>

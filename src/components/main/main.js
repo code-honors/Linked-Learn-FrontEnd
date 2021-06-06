@@ -2,11 +2,15 @@ import React ,{Component} from 'react';
 import {Fade , Roll} from 'react-reveal';
 import './main.scss';
 import "animate.css/animate.min.css";
+import Logo from '../navbar/logo';
+import Navbar from '../navbar/navbar';
 function Main () {
     // state = {};
     // render () {
         return (
           <>
+          {/* <Logo/> */}
+          <Navbar/>
             <div className='main-section' id='main'>
               <Fade right >
                 
