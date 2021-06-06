@@ -1,9 +1,6 @@
 import React from 'react';
-import { Typography, Link, makeStyles } from '@material-ui/core/';
-import {
-    createMuiTheme,
-    withStyles,
-} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/';
+import { createMuiTheme,withStyles,} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { pink } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
@@ -33,10 +30,9 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         '& .MuiTextField-root': {
             color: 'white'
-        }
+        },
     },
     margin: {
-        // margin: theme.spacing(2),
         marginBottom: '20px',
 
     },
@@ -54,10 +50,7 @@ const CssTextField = withStyles({
             color: 'white',
         },
         '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                // borderColor: 'white',
-                // color: 'white',
-            },
+           
             '&:hover fieldset': {
                 borderColor: '#ef2853',
                 color: 'white',
@@ -129,12 +122,10 @@ const Footer = () => {
                 <p className='par2'>
                     <MailIcon style={{ marginRight: '15px' }}>
                     </MailIcon>
-                    {/* <strong> Email us  :</strong> <br /> <br /> */}
                <a href='mailto:Linked-Learn@gmail.com' style={{color:'white', textDecoration:'underLine'}}>Linked-Learn@gmail.com </a> 
                 <br /> <br />
                     <PhoneIcon style={{ marginRight: '15px' }}>
                     </PhoneIcon>
-                    {/* <strong> Call us :</strong> <br /><br /> */}
                     <a href='tel:+962799999990' style={{color:'white', textDecoration:'underLine'}}>+962799999990</a> 
                </p>
             </div>
@@ -153,44 +144,3 @@ const Footer = () => {
 }
 
 export default Footer;
-
-
-
-
-
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//   },
-//   margin: {
-//     margin: theme.spacing(1),
-//   },
-// }));
-
-
-
-// const theme = createMuiTheme({
-//     palette: {
-//         primary: pink,
-//     },
-// });
-
-// export default function CustomizedInputs() {
-//     const classes = useStyles();
-
-//     return (
-//         <form className={classes.root} noValidate>
-//             <ThemeProvider theme={theme}>
-
-//                 <TextField
-//                     className={classes.margin}
-//                     label="ThemeProvider"
-//                     variant="outlined"
-//                     id="mui-theme-provider-outlined-input"
-//                 />
-//             </ThemeProvider>
-//         </form>
-//     );
-// }
