@@ -8,7 +8,7 @@ function Courses() {
 
     return (
         <section className='products'>
-                <Figure>
+                <Figure style={{marginRight:"20px"}}>
                     <Figure.Image
                         width={300}
                         height={400}
