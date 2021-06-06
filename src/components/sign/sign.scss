@@ -49,15 +49,15 @@ padding: 10px;
 	transition: all .4s cubic-bezier(.785,.135,.15,.86);
 
 	&.sign-in{
-    max-height: 72px
+    max-height: 13vh;
     }
 	&.sign-up{
-    max-height: 250px
+    // max-height: 250px
     }
 		
 	
 	&.forgot{
-    max-height: 36px
+    max-height: 6vh;
     }
 		
 }
@@ -136,7 +136,7 @@ padding: 10px;
 .join{
 	color: #fff;
 	font-size: 60px;
-	font-family: cursive;
+	font-family:Verdana, Geneva, Tahoma, sans-serif ;
 	padding: 55px;
 	text-align: center;
 }

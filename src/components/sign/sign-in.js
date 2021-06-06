@@ -3,6 +3,7 @@ import SignForm from './form.js'
 import './sign.scss';
 import {ListGroup } from 'react-bootstrap';
 import {Fade } from 'react-reveal';
+import Logo from '../navbar/logo';
 
 
 function Sign() {
@@ -10,7 +11,7 @@ function Sign() {
 	
 	return (
 		<>
-		
+		<Logo/>
 		<div className='sign-form' id='sign-in'>
 		<Fade right >
 			<div className='sign' >	
