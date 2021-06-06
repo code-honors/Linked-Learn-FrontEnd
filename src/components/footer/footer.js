@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     container :{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr 1fr 1fr',
-        gap: '5%',
+        gap: '3%',
     },
     h3:{
         marginBottom:'10%',
