@@ -1,11 +1,13 @@
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Navbar from '../navbar/navbar';
 
 export default function NotFound() {
   return (
     <>
+    <Navbar/>
       <Card
-        style={{ border: '1px solid black', width: '50%', textAlign: 'center' }}
+        style={{ border: '1px solid black', width: '100%',height:'800px',  textAlign: 'center' }}
       >
         <Card.Img
           src="http://placehold.jp/670x150.png?text=404"
