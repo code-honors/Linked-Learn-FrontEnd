@@ -1,9 +1,12 @@
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Footer from '../footer/footer';
+import Navbar from '../navbar/navbar';
 
 export default function NotFound() {
   return (
     <>
+    <Navbar/>
       <Card
         style={{ border: '1px solid black', width: '100%',height:'800px',  textAlign: 'center' }}
       >
@@ -23,6 +26,7 @@ export default function NotFound() {
           </Link>
         </Card.Text>
       </Card>
+      <Footer/>
     </>
   );
 }

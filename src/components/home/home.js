@@ -42,8 +42,8 @@ function Home() {
           options={{
             type: 'loop',
             direction: 'ttb',
-            height: '100vh',  
-            updateOnMove:true,
+            height: '100vh',
+            updateOnMove: true,
             arrows: false,
             autoplay: true,
             interval: 5000,
