@@ -5,11 +5,8 @@
     border: black 1px;
 }
 
-
 .options{
-// display: flex;
 align-items: center;
-// width: 350px;
 width: 295px;
 margin: 0 auto;
 padding: 10px;
@@ -62,37 +59,9 @@ padding: 10px;
 		
 }
 	
-
-	//  input{
-    //     border: 0;
-	// 	margin-bottom: 10px;
-	// 	padding: 15px;
-	// 	font-size: 1rem;
-	// 	font-family: Nunito, sans-serif;
-	// 	color: #000;
-	// 	border-radius: 5px;
-	
-	// 	&::placeholder{
-    //     color: #aaa
-    //     }
-	// 	&::-webkit-input-placeholder{
-    //     color: #aaa
-    //     }
-	// 	&:-ms-input-placeholder{
-    //     color: #aaa
-    //     }
-	// 	&:focus{
-    //      outline: none
-    //     }
-			
-    //  }
-	
 	
 .btn-submit-form{
 	border: 0;
-	// appearance: none;
-	// -webkit-appearance: none;
-	// -moz-appearance: none;
 	cursor: pointer;
 	padding: 15px 0;
 	border-radius: 5px;
@@ -117,7 +86,6 @@ padding: 10px;
     padding: 20px;
     position: relative;
     top: 20%;
-    // left: 20%;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 
@@ -126,7 +94,6 @@ padding: 10px;
 .sign{
 	width: 22%;
 	height: 62%;
-	// float:left;
 	background-color: #ef2853;
 	border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -135,8 +102,8 @@ padding: 10px;
 }
 .join{
 	color: #fff;
-	font-size: 60px;
+	font-size: 3.7rem;
 	font-family:Verdana, Geneva, Tahoma, sans-serif ;
-	padding: 55px;
+	padding: 20% 12%;
 	text-align: center;
 }

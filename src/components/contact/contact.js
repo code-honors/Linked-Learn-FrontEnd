@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Fade, Roll } from 'react-reveal';
+import React from 'react';
+import { Fade } from 'react-reveal';
 import PhoneIcon from '@material-ui/icons/Phone';
 import MailIcon from '@material-ui/icons/Mail';
 import './contact.scss';
