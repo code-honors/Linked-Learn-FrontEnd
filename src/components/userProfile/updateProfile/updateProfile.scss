@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/bootstrap";
+
+#accountFormDiv {
+    width: 90%;
+    margin: 5px 5px 5px 0;
+    background-color: white;
+    box-shadow: 0 0 5px grey;
+
+    form {
+        margin: 6% auto;
+        width:80%;
+
+        input {
+            background-color: white;
+            font-size: larger;
+            &:active,&:focus {
+                
+                border: 1px solid black;
+                box-shadow: none;
+            }
+        }
+
+        button, input{
+            border-radius: 0;
+        }
+
+        #showPasswordCheckbox:checked{
+            background-color: #FF1949;
+        }
+
+        button{
+            width: 100%;
+            background-color: #FF1949;
+            font-weight: bolder;
+            border: none;
+            &:active,&:focus {
+                outline: none;
+                border: none;
+                box-shadow: 0 0 3px #FF1949;
+            }
+        }
+    }
+}

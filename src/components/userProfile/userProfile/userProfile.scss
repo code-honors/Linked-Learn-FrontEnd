@@ -1,0 +1,20 @@
+#userProfileContainer{
+    width: 70%;
+    margin: 5px 5px 5px 0;
+    background-color: white;
+    box-shadow: 0 0 5px grey;
+    justify-self: start;
+    ul {
+        margin: 0;
+        list-style: none;
+        li {
+            margin: 5% auto;
+            img {
+                border-radius: 50%;
+                border: 1px solid silver;
+                margin-top: 0;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}
