@@ -19,6 +19,17 @@ export default function Routes() {
     </Switch>
   );
 }
+// import UserPage from '../components/userProfile/index';
+
+// export default function Routes() {
+//   return (
+//     // <Switch>
+//     //   <Route exact path="/student" component={UserPage} />
+//     //   {/* <Route component={NotFound} /> */}
+//     // </Switch>
+//     <UserPage/>
+//   );
+// }
 
 
 
