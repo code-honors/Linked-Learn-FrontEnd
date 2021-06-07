@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
     margin: {
         marginBottom: '20px',
+        height:'6vh'
 
     },
 }));
@@ -41,13 +42,21 @@ const CssTextField = withStyles({
     root: {
         '& label.Mui-focused': {
             color: '#ef2853',
+           
+        },
+        '& .MuiOutlinedInput-input' :{
+            padding:'12px',
+            
+            
         },
         "MuiTextFelid": {
-            color: "white"
+            color: "white",
+           
         },
         '& .MuiInput-underline:after': {
             borderBottomColor: '#ef2853',
             color: 'white',
+
         },
         '& .MuiOutlinedInput-root': {
            
@@ -80,20 +89,20 @@ const Footer = () => {
                 <h3 className={classes.h3}> Questions?</h3>
                 <form className={classes.root} noValidate>
                     <CssTextField
-                        style={{ backgroundColor: 'white', borderRadius: '10px', width: '100%' }}
+                        style={{ backgroundColor: 'white', borderRadius: '6px', width: '90%' }}
                         className={classes.margin}
                         label="Email"
                         variant="outlined"
                         id="custom-css-outlined-input"
                     />
                     <CssTextField
-                        style={{ backgroundColor: 'white', borderRadius: '10px', width: '100%' }}
+                        style={{ backgroundColor: 'white', borderRadius: '6px', width: '90%' }}
                         className={classes.margin}
                         label="Question"
                         variant="outlined"
                         id="custom-css-outlined-input"
                     />
-                    <Button variant="contained" style={{ width: '50%', backgroundColor: '#ef2853', borderRadius: '7px', marginLeft: '20%', lineHeight: '2.5' }}>
+                    <Button variant="contained" style={{ width: '50%', backgroundColor: '#ef2853', borderRadius: '6px', marginLeft: '19%', lineHeight: '2',color:'#fff' }}>
                         Send
                  </Button>
                 </form>
