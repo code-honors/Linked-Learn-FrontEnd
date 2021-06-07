@@ -1,23 +1,21 @@
 #root{
     overflow-x: hidden;
 }
-.body{
-    background-image: url(https://i.pinimg.com/originals/2f/c6/9d/2fc69d9c85759e9cd6cf94b4f65c1a47.gif);
-    width:100%;
-    height: 100%;
-    // background: ;
-    // display: flex;
-    // flex-wrap: nowrap;
-  
+
+.grid{
+display: grid;
+grid-template-columns: 1fr 4fr;
 }
-.dev img{
-    // background-image: url(https://academist.qodeinteractive.com/wp-content/uploads/2018/07/left-menu-home-slider-1-1.png); 
+
+.dev {
+    background-image: url(./dashboard.gif);
+    background-size: cover;
     width:100%;
     height: 100%;
     position: absolute;
     top:0;
-    z-index: 2;
-    // left:15%;
+    z-index:-1;
+
 
 }
 .words {
@@ -33,3 +31,56 @@
     font-size: 32px;
     
 }
+.whyChoose{
+    width:30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-left: 25%;
+
+}
+.sub5{
+    font-size: 38px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    color: rgb(22, 22, 22);
+    }
+    .sub5:after {
+        content: "";
+        display: block; 
+        margin-left:10px; 
+        width: 15%; 
+        padding-top: 10px;
+        border-bottom: 3px solid #ef2853; 
+    }
+
+    .progress-bar{
+        background: none !important;
+    }
+
+    .rate{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .progresss{
+        display: flex;
+        flex-direction: column;
+        margin-top: 4%;
+    }
+    .inner-rect-bar{
+        background-color:#ef2853 !important;
+    }
+    .courses{
+        margin-left: 21% ;
+    }
+
+    .timeline{
+        margin-top: 5%;
+        margin-left: 13%;
+    }
+    .slideShow{
+        margin-left: 20%;
+        width:84%;
+        margin-bottom:5%;
+    }

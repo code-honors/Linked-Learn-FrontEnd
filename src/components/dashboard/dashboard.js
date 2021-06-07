@@ -1,67 +1,212 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader, SidebarFooter } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
-import { FaHeart, FaBars, FaGem, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaHeart, FaGem, FaUser, FaSignOutAlt } from 'react-icons/fa';
 import './dashboard.scss';
-import { Fade } from 'react-reveal';
+import Sticky from 'react-stickynode';
+import ProgressBar from 'react-animated-progress-bar';
+import Courses from '../courses/all'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Timeline from '@material-ui/lab/Timeline';
+import TimelineItem from '@material-ui/lab/TimelineItem';
+import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
+import TimelineConnector from '@material-ui/lab/TimelineConnector';
+import TimelineContent from '@material-ui/lab/TimelineContent';
+import TimelineDot from '@material-ui/lab/TimelineDot';
+import Carousel from 'react-bootstrap/Carousel';
+import Footer2 from '../footer/footer2'
 
 
 function Dashboard() {
-
+    useEffect(() => {
+        AOS.init({
+            offset: 200,
+            duration: 600,
+            easing: 'ease-in-sine',
+            delay: 100,
+        });
+        AOS.refresh();
+    }, []);
     const [collapsed, setCollapsed] = useState(false);
     const handleCollapsedChange = (checked) => {
         setCollapsed(checked);
-      };
+    };
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex, e) => {
+        setIndex(selectedIndex);
+    };
     return (
         <>
             <div className='body'>
                 <div className='dev'>
-                    <img src='https://academist.qodeinteractive.com/wp-content/uploads/2018/07/left-menu-home-slider-1-1.png' />
-                    <Fade right>
-                        <div className='words'>
-
-                            <h3> <strong>Express yourself.</strong>  </h3>
-                            <h3> <strong>Show creativity.</strong> </h3>
-                            <h3> <strong> Stay inspired</strong> . </h3>
-                        </div>
-                    </Fade>
+                    <div className='words' data-aos="fade-left">
+                        <h3> <strong>Express yourself.</strong>  </h3>
+                        <h3> <strong>Show creativity.</strong> </h3>
+                        <h3> <strong> Stay inspired</strong> . </h3>
+                    </div>
                 </div>
-                <ProSidebar collapsed={false} style={{ height: '100vh', position: 'sticky' }}>
-                    <SidebarHeader>
-                        <img
-                            style={{ marginLeft: '9%' }}
-                            src="assets/logo.png"
-                            width="200"
-                            height="65"
-                            className="d-inline-block align-top"
-                            alt="Linked Learn logo"
-                        />
-                    </SidebarHeader>
-                    <Menu iconShape="circle">
-                        <MenuItem style={{ marginTop: '40%' }} icon={<FaGem />}>Dashboard</MenuItem>
-                        <SubMenu icon={<FaHeart />} title="Courses" >
-                            <MenuItem>Component 1</MenuItem>
-                            <MenuItem>Component 2</MenuItem>
-                            <MenuItem>Component 1</MenuItem>
-                        </SubMenu>
-                        <SubMenu icon={<FaUser />} title="Profile" >
-                            <MenuItem>Component 1</MenuItem>
-                        </SubMenu>
-                        <MenuItem icon={<FaSignOutAlt />}>Log Out</MenuItem>
-                        <SidebarFooter style={{ position: 'absolute', bottom: '0', padding: '8%' }}>
-                            {'Copyright © '}
-
-          Linked-Learn
-        {' '}
-                            {new Date().getFullYear()}
-                            {'.'}
-                        </SidebarFooter>
-                    </Menu>
-                </ProSidebar>
+                <Sticky>
+                    <div style={{ height: '100vh', zIndex: '10' }} >
+                        <ProSidebar collapsed={false} >
+                            <SidebarHeader>
+                                <img
+                                    style={{ marginLeft: '10%' }}
+                                    src="assets/logo-color.png"
+                                    width="190"
+                                    className="d-inline-block align-top"
+                                    alt="Linked Learn logo"
+                                />
+                            </SidebarHeader>
+                            <Menu iconShape="circle">
+                                <MenuItem style={{ marginTop: '40%' }} icon={<FaGem />}>Dashboard</MenuItem>
+                                <SubMenu icon={<FaHeart />} title="Courses" >
+                                    <MenuItem>Find All Courses</MenuItem>
+                                </SubMenu>
+                                <SubMenu icon={<FaUser />} title="Profile" >
+                                    <MenuItem>Go to your Profile</MenuItem>
+                                </SubMenu>
+                                <MenuItem icon={<FaSignOutAlt />}>Log Out</MenuItem>
+                                <SidebarFooter style={{ position: 'absolute', bottom: '0', padding: '8%' }}>
+                                    {'Copyright © '} Linked-Learn {' '}
+                                    {new Date().getFullYear()}
+                                    {'.'}
+                                </SidebarFooter>
+                            </Menu>
+                        </ProSidebar>
+                    </div>
+                </Sticky>
             </div>
-            <h3>Express yourself. </h3>
-            <h3>Show creativity. </h3>
-            <h3>Stay inspired. </h3>
+            <div className='courses' data-aos="fade-left" data-aos-delay="500">
+                <h2 className='sub5' style={{ marginTop: '10%', marginLeft: '5%', marginBottom: '-2%' }}> <strong> Popular Courses</strong> </h2> <br /><br />
+                <Courses />
+            </div>
+            <div className='rate' data-aos="fade-right" >
+                <div className="whyChoose">
+                    <h2 className='sub5'> <strong>Why Choose US</strong> </h2> <br /><br />
+                    <p>Many successful years of experience in the education make us leaders in this field.</p>
+                </div>
+                <div className='progresss'>
+                    <h6>Mentorship</h6>
+                    <ProgressBar
+                        width="400px"
+                        height="10px"
+                        rect
+                        fontColor="gray"
+                        percentage="70"
+                        rectPadding="1px"
+                        rectBorderRadius="20px"
+                        trackPathColor="transparent"
+                        trackBorderColor="grey"
+                    />
+                    <h6>Education</h6>
+                    <ProgressBar
+                        width="400px"
+                        height="10px"
+                        rect
+                        fontColor="gray"
+                        percentage="90"
+                        rectPadding="1px"
+                        rectBorderRadius="20px"
+                        trackPathColor="transparent"
+                        trackBorderColor="grey"
+                    />
+                    <h6>Learning</h6>
+                    <ProgressBar
+                        width="400px"
+                        height="10px"
+                        rect
+                        fontColor="gray"
+                        percentage="80"
+                        rectPadding="1px"
+                        rectBorderRadius="20px"
+                        trackPathColor="transparent"
+                        trackBorderColor="grey"
+                    />
+                </div>
+            </div>
+            <div className='timeline' data-aos="fade-left">
+                <Timeline align="alternate">
+                    <TimelineItem>
+                        <TimelineSeparator>
+                            <TimelineDot variant="outlined" />
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent>Eat</TimelineContent>
+                    </TimelineItem>
+                    <TimelineItem>
+                        <TimelineSeparator>
+                            <TimelineDot variant="outlined" color="primary" />
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent>Study</TimelineContent>
+                    </TimelineItem>
+                    <TimelineItem>
+                        <TimelineSeparator>
+                            <TimelineDot variant="outlined" color="secondary" />
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent>Sleep</TimelineContent>
+                    </TimelineItem>
+                    <TimelineItem>
+                        <TimelineSeparator>
+                            <TimelineDot variant="outlined" />
+                        </TimelineSeparator>
+                        <TimelineContent>Repeat</TimelineContent>
+                    </TimelineItem>
+                </Timeline>
+            </div>
+
+            <div className='slideShow' data-aos="fade-left">
+                <Carousel activeIndex={index} onSelect={handleSelect}>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="assets/2.png"
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                            <div style={{ marginLeft: '45%', marginTop: '-20%' }} data-aos="fade-left">
+                                <h3> <strong>Thomas Edison</strong></h3>
+                                <p>Never stop learning. Read the entire panorama of literature..</p>
+                            </div>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="assets/slide1.png"
+                            alt="Second slide"
+                        />
+
+                        <Carousel.Caption>
+                            <div style={{ marginLeft: '50%', marginTop: '-20%' }} data-aos="fade-left">
+                                <h3 > <strong>Albert Einstein</strong></h3>
+                                <p>Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world..</p>
+
+                            </div>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="assets/3.png"
+                            alt="Third slide"
+                        />
+
+                        <Carousel.Caption>
+                            <div style={{ marginLeft: '30%', marginTop: '-20%' }} data-aos="fade-left">
+                                <h3> <strong>Ibn Sina</strong></h3>
+                                <p>
+                                    The more brilliant the lightning, the quicker it disappears.
+                                </p>
+                            </div>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
+            </div>
+            <Footer2 />
         </>
     )
 }
