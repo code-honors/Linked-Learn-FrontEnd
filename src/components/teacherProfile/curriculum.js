@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Footer from '../footer/footer';
+import Navbar from '../navbar/navbar';
 import './courses.scss'
 import { Card, Figure } from 'react-bootstrap';
 var { SocialIcon } = require('react-social-icons');
@@ -7,6 +9,8 @@ var { SocialIcon } = require('react-social-icons');
 function curriculum() {
 
     return (
+        <>
+            <Navbar/>
         <section className='products'>
 
                 <Figure style={{marginRight:"20px"}}>
@@ -82,6 +86,9 @@ function curriculum() {
               
             
         </section>
+        <Footer/>
+
+        </>
     )
 }
 

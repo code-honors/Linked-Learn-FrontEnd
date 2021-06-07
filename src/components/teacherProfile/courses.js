@@ -2,11 +2,16 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './courses.scss'
 import { Card, Figure } from 'react-bootstrap';
+import Footer from '../footer/footer';
+import Navbar from '../navbar/navbar';
 var { SocialIcon } = require('react-social-icons');
+
 
 function Courses() {
 
     return (
+        <>
+        <Navbar/>
         <section className='products'>
                 <Figure style={{marginRight:"20px"}}>
                     <Figure.Image
@@ -80,6 +85,8 @@ function Courses() {
                 </Card>
 
         </section>
+              <Footer/>
+</>
     )
 }
 
