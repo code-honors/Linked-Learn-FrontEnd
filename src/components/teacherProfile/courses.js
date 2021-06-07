@@ -33,8 +33,8 @@ function Courses() {
                 <div >
                 <nav >
                 <ul>
-                  <li><NavLink style={{color:"#ff1949"}} to='/teacher/profile'>Courses</NavLink></li>
-                  <li><NavLink style={{color:"#ff1949"}} to='/teacher/profile/curriculum'>Curriculum</NavLink></li>
+                  <li><NavLink className="nav_link" style={{color:"#ff1949"}} to='/teacher/profile'>Courses</NavLink></li>
+                  <li><NavLink className="nav_link" style={{color:"#ff1949"}} to='/teacher/profile/curriculum'>Curriculum</NavLink></li>
                 </ul>
                 </nav>
                 <Card className="card" style={{ width: '18rem' , height: "68.2%" }}>
