@@ -4,6 +4,7 @@ import Sign from '../components/sign/sign-in'
 
 import NotFound from '../components/NotFound';
 import Home from '../components/home/home';
+import Dashboard from '../components/dashboard/dashboard'
 
 
 export default function Routes() {
@@ -11,7 +12,9 @@ export default function Routes() {
     <Switch>
       <Route exact path="/signin" component={Sign} />
       <Route exact path="/" component={Home} />
-      <Route component={NotFound} />
+      <Route exact path="/dashboard" component={Dashboard} />
+
+      <Route path='*' component={NotFound} />
     </Switch>
   );
 }

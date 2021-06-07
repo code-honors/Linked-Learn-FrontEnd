@@ -6,7 +6,7 @@ function Logo() {
 
     return (
         <>
-            <div className='logo'>
+            <div className='logo' style={{zIndex:'5'}}>
 
                 <img
                     src="assets/logo.png"
