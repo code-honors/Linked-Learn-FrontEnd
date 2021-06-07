@@ -2,10 +2,20 @@
    display: flex;
 }
 
+.secDiv{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.titleClass{
+    margin-left:  5%;
+    margin-top:100px ;
+}
+
 .firstImg{
     padding-left: 77px;
     padding-right: 30px;
     padding-top: 30px;
+    
 }
 .pClass{
     font-size: 20px;
@@ -13,26 +23,16 @@
     padding-top: 60px;
     padding-right: 80px;
 }
-.addBtn{
-    color: #fff;
-    position: relative;
-    width: auto;
-    margin: 0;
-    font-size: 10px;
-    line-height: 2em;
-    font-weight: 600;
-    box-sizing: border-box;
-    border-radius: 0;
-    padding: 15px 43px;
-    cursor: pointer;
-    width: 137px;
-    height: 61px;
-    background-color: #ff1949;
-    margin-top: 60px;
+.btn-Class{
+    width: 200px;
+    margin-top: 4%;
 }
 
 .secImg{
     width: 1300px;
     margin-left: 77px;
     margin-top: 40px;
+    width: 500px;
+    height: 500px;
 }
+
