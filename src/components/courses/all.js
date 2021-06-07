@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { getRemoteData } from '../../store/actions';
 import { useEffect } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Container, Figure } from 'react-bootstrap';
+import './courses.scss';
 
 const api = 'https://linked-learn.herokuapp.com/courses';
 
@@ -18,18 +19,36 @@ const Courses = (props) => {
       : props.courses.courses;
   return (
     <>
-      {courses.map((course) => {
-        return (
-          <Card key={course.id} className="bg-dark text-white">
-            <Card.Img src={course.img} alt="Card image" height={50} />
-            <Card.ImgOverlay>
-              <Card.Title>{course.name}</Card.Title>
-              <Card.Text>{course.description}</Card.Text>
-              <Card.Text>{course.category}</Card.Text>
-            </Card.ImgOverlay>
-          </Card>
-        );
-      })}
+      <Container className='courses-container'>
+        {courses.map((course) => {
+          return (
+            <Card
+              className="card"
+              key={course.id}
+              style={{ width: '18rem', height: '68.2%' }}
+            >
+              <Card.Img variant="top" src={course.img} />
+              <Card.Body>
+                <Card.Title>{course.name}</Card.Title>
+                <Card.Text>{course.category}</Card.Text>
+                <Figure.Caption>{course.description}</Figure.Caption>
+                <Card.Link
+                  href={`/courses/${course.id}`}
+                  style={{ float: 'left'}}
+                >
+                  Details
+                </Card.Link>
+                <Card.Link
+                  style={{ float: 'right', color: '#ff1949' }}
+                  href={`/courses/${course.id}`}
+                >
+                  Add to My Courses
+                </Card.Link>
+              </Card.Body>
+            </Card>
+          );
+        })}
+      </Container>
     </>
   );
 };
