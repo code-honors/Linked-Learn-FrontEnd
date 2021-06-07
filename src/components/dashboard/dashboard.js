@@ -7,7 +7,7 @@ import { Fade } from 'react-reveal';
 
 
 function Dashboard() {
-    
+
     const [collapsed, setCollapsed] = useState(false);
     const handleCollapsedChange = (checked) => {
         setCollapsed(checked);
@@ -26,7 +26,7 @@ function Dashboard() {
                         </div>
                     </Fade>
                 </div>
-                <ProSidebar collapsed={true} style={{ height: '100vh', position: 'sticky' }}>
+                <ProSidebar collapsed={false} style={{ height: '100vh', position: 'sticky' }}>
                     <SidebarHeader>
                         <img
                             style={{ marginLeft: '9%' }}
