@@ -3,6 +3,17 @@
 	margin-top: 30px;
     width: 400px;
     border: black 1px;
+
+	.account-form {
+		input {
+			&:active,&:focus {
+				transition: 0.5s;
+				border: 1px solid black;
+				box-shadow: none !important;
+				outline: none;
+			}
+		}
+	}
 }
 
 .options{
@@ -12,14 +23,34 @@ margin: 0 auto;
 padding: 10px;
 }
 
+.list-group-item{
+	color: rgb(59, 59, 59);
+	&:focus, &:active{
+		box-shadow: 0 0 5px #ef2853;
+	}
+}
 
- .list{
+.list-group-item.active{
+
+	border-color: #b91f40 !important;	 
+}
+
+.btn-primary{
+	border:none !important;
+	// border-color:  !important;
+	&:active,&:focus {
+		outline:none ;
+		box-shadow: 0 0 5px #ef2853 !important;
+	}
+}
+
+.list{
 	cursor: pointer;
 	opacity: .8;
 	transition: all .2s ease;
 	
 	&:hover{
-	opacity: 1;
+		opacity: 1;
     }
 		
 	&.active{
@@ -32,7 +63,7 @@ padding: 10px;
 	flex-direction: column;
 	justify-content: space-between;
 	margin-top: 30px;
-    width: 340px;
+    width: 105%;
     text-align: center;
     margin: 0 auto;
     padding: 10px;

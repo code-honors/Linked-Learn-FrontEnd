@@ -26,7 +26,7 @@ function Home() {
       >
         <Splide
           options={{
-            type: 'loop',
+            type: 'fade',
             direction: 'ttb',
             height: '100vh',
             updateOnMove: true,
