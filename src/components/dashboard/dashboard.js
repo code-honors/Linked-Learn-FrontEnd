@@ -6,6 +6,7 @@ import './dashboard.scss';
 import Sticky from 'react-stickynode';
 import ProgressBar from 'react-animated-progress-bar';
 import Courses from '../courses/all'
+import Teachers from '../allTeachers/teachers';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Timeline from '@material-ui/lab/Timeline';
@@ -84,6 +85,10 @@ function Dashboard() {
             <div className='courses' data-aos="fade-left" data-aos-delay="500">
                 <h2 className='sub5' style={{ marginTop: '10%', marginLeft: '5%', marginBottom: '-2%' }}> <strong> Popular Courses</strong> </h2> <br /><br />
                 <Courses />
+            </div>
+            <div className='teacher' data-aos="fade-right">
+            <h2 className='sub5' style={{ marginTop: '10%', marginLeft: '5%' }}> <strong> Our Teachers</strong> </h2> <br /><br />
+                <Teachers/>
             </div>
             <div className='rate' data-aos="fade-right" >
                 <div className="whyChoose">
@@ -233,6 +238,7 @@ function Dashboard() {
                     <p>Let’s find a perfect course for you now! Send us a request!</p>
                 </div>
             </div>
+            
             <Footer2 />
         </>
     )
