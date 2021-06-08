@@ -9,8 +9,9 @@ import StudentCurriculum from '../components/studentProfile/curriculum';
 import Dashboard from '../components/dashboard/dashboard'
 import Courses from '../components/courses/all';
 import AboutUs from '../components/aboutUs/aboutus.js';
+import Join from '../components/chating/Join/Join';
+import Chat from '../components/chating/Chat/Chat';
 import Index from '../components/course';
-import UserPage from '../components/userProfile/'
 import UserProfile from "../components/userProfile/userProfile/userProfile";
 import UserUpdateInfo from "../components/userProfile/updateProfile/updateProfile";
 import UserCourses from "../components/userProfile/userCourses/userCourses";
@@ -19,10 +20,11 @@ import AddCourse from "../components/userProfile/addCourse/addCourse";
 
 
 export default function Routes() {  
-  let { id } = useParams();
   
   return (
     <Switch>
+      <Route exact path="/join" component={Join} />
+      <Route exact path="/chat" component={Chat} />
       <Route exact path="/course" component={Index} />
       <Route exact path="/signin" component={Auth} />
       <Route exact path="/" component={Home} />
