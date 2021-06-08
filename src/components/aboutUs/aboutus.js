@@ -38,7 +38,7 @@ const About = () => {
         },
         {
             image:
-                "assets/bashar.jpg",
+                "https://media-exp1.licdn.com/dms/image/C4E03AQFSlRi3F9FGbQ/profile-displayphoto-shrink_200_200/0/1608985382035?e=1628726400&v=beta&t=3a-jVttj_faZi0MiAqorZCornQvC98eHoe5GzhC9ms8",
             title: "Bashar Nofal",
             text: "Full Stack Developer",
             linkedin: 'https://www.linkedin.com/in/zaid-alasfar-7b84a8190/',
@@ -59,15 +59,15 @@ const About = () => {
     const renderCard = (card, index) => {
         return (
             <>
-                <Navbar />
+
                 <Card style={{ width: "20rem" }} key={index} className="box">
                     <Card.Img variant="top" src={card.image} style={{ objectFit: 'cover', height: '200px' }} />
                     <Card.Body>
-                        <Card.Title>{card.title}</Card.Title>
+                        <Card.Title as='h4'><strong>{card.title}</strong></Card.Title>
                         <Card.Text>{card.text}</Card.Text>
-                        <a href={card.linkedin}><LinkedInIcon style={{ margin: '8%', color: 'black' }}></LinkedInIcon></a>
-                        <a href={card.git}> <GitHubIcon style={{ margin: '8%', color: 'black' }}></GitHubIcon></a>
-                        <a href={card.face}> <FacebookIcon style={{ margin: '8%', color: 'black' }}></FacebookIcon></a>
+                        <a href={card.linkedin}><LinkedInIcon style={{ margin: '8%', color: '#EF2853' }}></LinkedInIcon></a>
+                        <a href={card.git}> <GitHubIcon style={{ margin: '8%', color: '#EF2853' }}></GitHubIcon></a>
+                        <a href={card.face}> <FacebookIcon style={{ margin: '8%', color: '#EF2853' }}></FacebookIcon></a>
 
 
                     </Card.Body>
@@ -79,7 +79,10 @@ const About = () => {
 
     return (
         <>
-            <div className="grid" >{cardInfo.map(renderCard)}
+            <Navbar />
+            <h1 className='sub'>The Founders</h1>
+            <div className="grid" >
+                {cardInfo.map(renderCard)}
             </div>
             <Footer />
         </>
