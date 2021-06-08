@@ -1,4 +1,5 @@
 import React  from "react";
+// import {NavLink} from 'react-router-dom';
 import {ReactNavbar} from "react-responsive-animate-navbar";
  import './navbar.scss'
 function  Navbar()  {
@@ -11,7 +12,7 @@ function  Navbar()  {
           { name: "HOME", to: "/" },
           { name: "COURSES", to: "/" },
           { name: "ABOUT US", to: "/" },
-          {name :  "PROFILE" , to: '/' },
+          { name :  "PROFILE" , to: '/profile' },
         ]}
         social={[
           {
