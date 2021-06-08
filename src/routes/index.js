@@ -7,11 +7,15 @@ import curriculum from '../components/teacherProfile/curriculum';
 import Dashboard from '../components/dashboard/dashboard'
 import Courses from '../components/courses/all';
 import AboutUs from '../components/aboutUs/aboutus.js';
+import Join from '../components/chating/Join/Join';
+import Chat from '../components/chating/Chat/Chat';
 
 
 export default function Routes() {
   return (
     <Switch>
+      <Route exact path="/join" component={Join} />
+      <Route exact path="/chat" component={Chat} />
       <Route exact path="/signin" component={Sign} />
       <Route exact path="/" component={Home} />
       <Route exact path="/teacher/profile" component={TeacherCourses} />
