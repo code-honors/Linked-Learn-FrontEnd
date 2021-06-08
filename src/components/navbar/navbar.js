@@ -90,9 +90,9 @@ function Navbar(props) {
         <AppBar style={{ backgroundColor: '#252525' }}>
           <Toolbar>
             <img
-              src="assets/logo.png"
-              width="190"
-              height="65"
+              src="assets/logo-color.png"
+              width="170"
+              // height="65"
               className="d-inline-block align-top"
               alt="Linked Learn logo"
             />
@@ -111,6 +111,11 @@ function Navbar(props) {
           <li>
             <NavLink to="">
               ABOUT
+             </NavLink>
+          </li>
+          <li>
+            <NavLink to="/teacher/profile">
+              Profile
              </NavLink>
           </li>
         </ul>

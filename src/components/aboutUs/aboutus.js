@@ -1,6 +1,9 @@
 import React from "react";
 import "./aboutus.scss";
 import { Card } from "react-bootstrap";
+// import Footer from '../footer/footer';
+// import Navbar from '../navbar/navbar';
+
 
 const About = () => {
     const cardInfo = [
@@ -37,6 +40,8 @@ const About = () => {
 
     const renderCard = (card, index) => {
         return (
+            <>
+            {/* <Navbar/> */}
             <Card style={{ width: "18rem" }} key={index} className="box">
                 <Card.Img variant="top" src="holder.js/100px180" src={card.image} />
                 <Card.Body>
@@ -44,6 +49,8 @@ const About = () => {
                     <Card.Text>{card.text}</Card.Text>
                 </Card.Body>
             </Card>
+            {/* <Footer/> */}
+            </>
         );
     };
 

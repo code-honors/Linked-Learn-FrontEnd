@@ -9,9 +9,9 @@ function Logo() {
             <div className='logo' style={{zIndex:'5'}}>
 
                 <img
-                    src="assets/logo.png"
+                    src="assets/logo-color.png"
                     width="220"
-                    height="77"
+                    // height="77"
                     className="d-inline-block align-top"
                     alt="Linked Learn logo"
                 />

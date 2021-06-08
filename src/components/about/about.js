@@ -8,7 +8,7 @@ function About() {
 
     return (
         <>
-            <Logo />
+            <Logo/>
             <div className='about-section' id='about'>
                 <Fade right>
                     <div className='about' >
