@@ -17,6 +17,7 @@ const signIn = (state, action) => {
 			return { user: payload, loggedIn: true };
 
 		case "SIGN-OUT":
+			console.log(1)
 			return { user: {}, loggedIn: false };
 
 		default:

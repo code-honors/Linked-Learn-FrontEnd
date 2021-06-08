@@ -4,9 +4,10 @@
     width:80%;
     display: grid;
     grid-template-columns: 40% 60%;
+    max-height: 65vh;
 }
 
-#accountFormDiv {
+.addCourseFormDiv {
     width: 90%;
     margin: 5px 5px 5px 0;
     background-color: white;
@@ -20,9 +21,8 @@
             background-color: white;
             font-size: larger;
             &:active,&:focus {
-                
                 border: 1px solid black;
-                box-shadow: none;
+                box-shadow: none !important;
             }
         }
 
@@ -30,15 +30,27 @@
             border-radius: 0;
         }
 
+        #courseDescription {
+            border-radius: 0;
+            &:active,&:focus {
+                border: 1px solid black;
+                box-shadow: none !important;
+            }
+        }
+
         button{
             width: 100%;
             background-color: #FF1949;
             font-weight: bolder;
             border: none;
-            &:active,&:focus {
-                outline: none;
-                border: none;
-                box-shadow: 0 0 3px #FF1949;
+            &:hover {
+                background-color: #FF1949;
+            }
+            &:active, &:focus {
+                background-color: #FF1949 !important;
+                outline: none !important;
+                border: none !important;
+                box-shadow: 0 0 5px #FF1949 !important;
             }
         }
     }

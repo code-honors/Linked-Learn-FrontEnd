@@ -6,6 +6,7 @@
     width:80%;
     display: grid;
     grid-template-columns: 40% 60%;
+    max-height: 65vh;
 }
 
 .accountFormDiv {
@@ -22,7 +23,6 @@
             background-color: white;
             font-size: larger;
             &:active,&:focus {
-                
                 border: 1px solid black;
                 box-shadow: none;
             }
@@ -36,15 +36,29 @@
             background-color: #FF1949;
         }
 
+        #rolesU{
+            margin: auto;
+            width: 45%;
+            &:active, &:focus {
+                outline: none;
+                border: none;
+                box-shadow: 0 0 10px #FF1949;
+            }
+        }
+
         button{
             width: 100%;
             background-color: #FF1949;
             font-weight: bolder;
             border: none;
-            &:active,&:focus {
-                outline: none;
-                border: none;
-                box-shadow: 0 0 3px #FF1949;
+            &:hover {
+                background-color: #FF1949;
+            }
+            &:active, &:focus {
+                background-color: #FF1949 !important;
+                outline: none !important;
+                border: none !important;
+                box-shadow: 0 0 5px #FF1949 !important;
             }
         }
     }

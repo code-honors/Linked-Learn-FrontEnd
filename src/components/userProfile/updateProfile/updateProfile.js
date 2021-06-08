@@ -15,16 +15,15 @@ function UserUpdateInfo(props) {
 		};
 	});
 
-	// useEffect(() => {
-	// 	let firstName = document.querySelector("#firstName");
-	// 	let 
-	// 	setTimeout(() => {
-	// 		document.querySelector("#firstName").value = "TestFirstName";
-	// 		document.querySelector("#LastName").value = "TestLastName";
-	// 		document.querySelector("#email").value = "test.1234@test.test";
-	// 		document.querySelector("#password").value = "VerySecretPassword";
-	// 	}, 500);
-	// }, []);
+	const handleSubmitUpdate = (event) => {
+		event.preventDefault();
+		let username = event.target.username.value;
+		let email = event.target.email.value;
+		let list = document.getElementById("rolesU");
+		let role = list.options[list.selectedIndex].value.toLowerCase();
+		let password = event.target.password.value;
+	};
+	
 	const handleShowPassword = () => {
 		let type = document.querySelector("#password").type;
 		type === "password"
@@ -39,14 +38,17 @@ function UserUpdateInfo(props) {
 						<Nav />
 					</>
 					<div className="accountFormDiv">
-						<Form id="accountForm">
+						<Form
+							id="accountForm"
+							onSubmit={(event) => handleSubmitUpdate(event)}
+						>
 							<Form.Row>
 								<Form.Group as={Col}>
 									<Form.Label>Username</Form.Label>
 									<Form.Control
 										id="username"
 										type="text"
-										value = {state.user.username}
+										value={state.user.username}
 										required
 									/>
 								</Form.Group>
@@ -62,19 +64,20 @@ function UserUpdateInfo(props) {
 								</Form.Group>
 							</Form.Row>
 
-							<Form.Group>
-								<Form.Label>Role</Form.Label>
-								<Form.Control
-									id="role"
-									type="text"
-									value={state.user.role}
-									required
-								/>
+							<Form.Group as={Col} controlId="formGridState">
+								<Form.Control id="rolesU" as="select">
+									<option disabled selected>
+										{`Your Role is ${state.user.role}`}
+									</option>
+									<option>Teacher</option>
+									<option>Student</option>
+								</Form.Control>
 							</Form.Group>
 
 							<Form.Group>
 								<Form.Label>Password</Form.Label>
 								<Form.Control
+									name="password"
 									id="password"
 									type="password"
 									required
