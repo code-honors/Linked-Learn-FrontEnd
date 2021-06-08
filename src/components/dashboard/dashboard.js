@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader, SidebarFooter } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
-import { FaHeart, FaGem, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaHeart, FaGem, FaUser, FaSignOutAlt ,FaHandshake} from 'react-icons/fa';
 import './dashboard.scss';
 import Sticky from 'react-stickynode';
 import ProgressBar from 'react-animated-progress-bar';
@@ -21,8 +21,13 @@ import HeadsetIcon from '@material-ui/icons/Headset';
 import HomeIcon from '@material-ui/icons/Home';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
+import { Link } from 'react-router-dom';
+import {signOut} from '../../store/actions';
+import {useDispatch} from 'react-redux';
 
 function Dashboard() {
+    const dispatch = useDispatch();
+
     useEffect(() => {
         AOS.init({
             offset: 200,
@@ -54,9 +59,9 @@ function Dashboard() {
                 <Sticky>
                     <div style={{ height: '100vh', zIndex: '10' }} >
                         <ProSidebar collapsed={false} >
-                            <SidebarHeader>
+                            <SidebarHeader style={{height:'10vh'}}>
                                 <img
-                                    style={{ marginLeft: '10%' }}
+                                    style={{ marginLeft: '10%',marginTop:'5%' }}
                                     src="assets/logo-color.png"
                                     width="190"
                                     className="d-inline-block align-top"
@@ -64,14 +69,21 @@ function Dashboard() {
                                 />
                             </SidebarHeader>
                             <Menu iconShape="circle">
-                                <MenuItem style={{ marginTop: '40%' }} icon={<FaGem />}>Dashboard</MenuItem>
-                                <SubMenu icon={<FaHeart />} title="Courses" >
-                                    <MenuItem>Find All Courses</MenuItem>
-                                </SubMenu>
-                                <SubMenu icon={<FaUser />} title="Profile" >
-                                    <MenuItem>Go to your Profile</MenuItem>
-                                </SubMenu>
-                                <MenuItem icon={<FaSignOutAlt />}>Log Out</MenuItem>
+                             
+                                <MenuItem  style={{ marginTop: '40%' }} icon={<FaGem />}> Dashboard</MenuItem>
+                              
+                                <MenuItem icon={<FaHeart />}  to='/courses' title="Courses" > Courses
+                                <Link to="/courses" />
+                                </MenuItem>
+                               
+                                <MenuItem icon={<FaUser />} title="Profile" > Profile
+                                <Link to="/profile/" />
+                                </MenuItem>                            
+                                <MenuItem  icon={<FaHandshake />}>
+                                <Link to="/aboutus" />Get To Know us</MenuItem>
+                            
+                                <MenuItem icon={<FaSignOutAlt />}  onClick={()=> dispatch(signOut)}>Log Out
+                                </MenuItem>
                                 <SidebarFooter style={{ position: 'absolute', bottom: '0', padding: '8%' }}>
                                     {'Copyright © '} Linked-Learn {' '}
                                     {new Date().getFullYear()}
@@ -166,7 +178,7 @@ function Dashboard() {
                 </Timeline>
             </div>
 
-            <div className='slideShow' data-aos="fade-left">
+            <div className='slideShow' data-aos="fade-right">
                 <Carousel activeIndex={index} onSelect={handleSelect}>
                     <Carousel.Item>
                         <img
