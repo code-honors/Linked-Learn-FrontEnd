@@ -113,6 +113,11 @@ function Navbar(props) {
               ABOUT
              </NavLink>
           </li>
+          <li>
+            <NavLink to="/teacher/profile">
+              Profile
+             </NavLink>
+          </li>
         </ul>
             <div className={classes.root}>
               <Avatar alt="Ruba Banat" src="fghjk" />
