@@ -92,7 +92,6 @@ function Navbar(props) {
             <img
               src="assets/logo-color.png"
               width="170"
-              // height="65"
               className="d-inline-block align-top"
               alt="Linked Learn logo"
             />
