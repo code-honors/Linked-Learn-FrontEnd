@@ -1,5 +1,3 @@
-@import "~bootstrap/scss/bootstrap";
-
 #userAccountContainer{
     margin: 5% 5% 5% 3%;
     // text-align: center;
@@ -9,7 +7,7 @@
     max-height: 65vh;
 }
 
-.accountFormDiv {
+.addCourseFormDiv {
     width: 90%;
     margin: 5px 5px 5px 0;
     background-color: white;
@@ -24,7 +22,7 @@
             font-size: larger;
             &:active,&:focus {
                 border: 1px solid black;
-                box-shadow: none;
+                box-shadow: none !important;
             }
         }
 
@@ -32,17 +30,11 @@
             border-radius: 0;
         }
 
-        #showPasswordCheckbox:checked{
-            background-color: #FF1949;
-        }
-
-        #rolesU{
-            margin: auto;
-            width: 45%;
-            &:active, &:focus {
-                outline: none;
-                border: none;
-                box-shadow: 0 0 10px #FF1949;
+        #courseDescription {
+            border-radius: 0;
+            &:active,&:focus {
+                border: 1px solid black;
+                box-shadow: none !important;
             }
         }
 

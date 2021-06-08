@@ -7,7 +7,6 @@ let initialState = {
     switch (type) {
       case 'GET_T':
         return { teachers: payload };
-    
       default:
         return state;
     }
