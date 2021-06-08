@@ -20,7 +20,7 @@ const About = () => {
         },
         {
             image:
-                "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+                "assets/me1.jpg",
             title: "Ahmad Alfrijat",
             text: "Full Stack Developer",
         },
