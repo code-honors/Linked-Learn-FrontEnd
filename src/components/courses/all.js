@@ -10,7 +10,7 @@ const Courses = (props) => {
   console.log(props.courses);
   useEffect(() => {
     console.log('step 1: courses component', api);
-    props.getRemoteData(api);
+    props.getRemoteData(api,'courses');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   let courses =
@@ -34,7 +34,7 @@ const Courses = (props) => {
                 <Figure.Caption>{course.description}</Figure.Caption>
                 <Card.Link
                   href={`/courses/${course.id}`}
-                  style={{ float: 'left'}}
+                  style={{ float: 'left', color:'black'}}
                 >
                   Details
                 </Card.Link>

@@ -19,13 +19,13 @@ function Contact() {
                             </MailIcon>
                             <strong> Email us  :</strong> <br /> <br />
                 Feel free to ask and we’ll get back to you. <br />
-                Linked-Learn@gmail.com
+                <a href='mailto:Linked-Learn@gmail.com' style={{color:'black', textDecoration:'underLine'}}>Linked-Learn@gmail.com </a> 
                 <br /> <br />
                             <PhoneIcon style={{ marginRight: '15px' }}>
                             </PhoneIcon>
                             <strong> Call us :</strong> <br /><br />
                Contact our customer care center<br />
-                0799999990
+               <a href='tel:+962799999990' style={{color:'black', textDecoration:'underLine'}}>+962799999990</a> 
                </p>
                     </div>
 

@@ -1,159 +1,93 @@
-  
-import React, { useEffect, useState } from 'react';
-import Main from '../main/main';
-import About from '../about/about';
-import Contact from '../contact/contact';
-import Sign from '../sign/sign-in';
-import './home.scss';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import React, { useEffect, useState } from "react";
+import {If, Then, Else } from "react-if"
+import { useSelector } from "react-redux";
+import Main from "../main/main";
+import About from "../about/about";
+import Contact from "../contact/contact";
+import {useHistory} from "react-router-dom";
+import Auth from "../sign/index";
+import "./home.scss";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+import ReactPageScroller from "react-page-scroller";
 
+function Home(props) {
+	//react-page-scroller
+    let [flag, setFlag] = useState(true);
+    let history = useHistory();
+	const [page, setPage] = useState(0);
 
-import ReactPageScroller from 'react-page-scroller';
+	const handlePage = (page) => {
+		setPage(page);
+	};
 
-function Home() {
- 
-  //react-page-scroller
-  const [page, setPage] = useState(0);
+	const state = useSelector((state) => {
+		return {
+			user: state.signIn.user,
+			loggedIn: state.signIn.loggedIn,
+		};
+	});
 
-  const handlePage = (page) => {
-  	setPage(page);
-  };
+    // console.log(state.user);
+    // console.log(state.loggedIn)
+    useEffect(() => {
+        setTimeout(()=> {
+            setFlag(false)
+        },300)
+    }, [])
+    
+	const handleUnavailable = (e) => {
+        console.log(e);
+	};
+    
+    useEffect(()=> {
+        console.log('home page',state.loggedIn);
+        if (state.loggedIn) {
+           
+                history.push("/dashboard");
+            
+        } 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[state.loggedIn])
+	// end of react-page-scroller
 
-  const handleUnavailable = (e) => {
-  	console.log(e);
-  };
+	return (
+		<>
+         <If condition={!flag}>
+            <Then>
+			<div
+				style={{
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					flexDirection: "column",
+				}}
+			>
 
-  // end of react-page-scroller
+				<ReactPageScroller
+					pageOnChange={handlePage}
+					containerWidth={window.innerWidth * 1}
+					containerHeight={window.innerHeight * 1}
+					customPageNumber={page}
+					onBeforePageScroll={(e) => handleUnavailable(e)}
+				>
+					<Main />
+					<About />
+					<Contact />
+					<Auth />
+				</ReactPageScroller>
+			</div>
+            </Then>
+            <Else>
+                loading
+            </Else>
+         </If>
+			{/* /* react-page-scroller */}
+            
+			
 
-  return (
-<>
-{/* /* react-page-scroller */ }
- {/* <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
-        width: '5rem',
-        margin: '0 auto',
-      }}
-    >
-      <div style={{ cursor: 'pointer' }} onClick={() => handlePage(0)}>
-        1
-      </div>
-      <div style={{ cursor: 'pointer' }} onClick={() => handlePage(1)}>
-        2
-      </div>
-      <div style={{ cursor: 'pointer' }} onClick={() => handlePage(2)}>
-        3
-      </div>
-    </div>  */}
-<div
-  style={{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  }}
->
- <ReactPageScroller
-    pageOnChange={handlePage}
-    containerWidth={window.innerWidth *1}
-    containerHeight={window.innerHeight * 1}
-    customPageNumber={page}
-    onBeforePageScroll={(e) => handleUnavailable(e)}
-  >
-    <Main />
-    <About />
-    <Contact />
-    <Sign />
-  </ReactPageScroller>
-</div> 
-{/* end of react-page-scroller  */ }
- </>
-    // @splidejs/react-splide
-    // <>
-      /* <ReactScrollWheelHandler
-        upHandler={(e) => console.log("scroll up")}
-        downHandler={(e) => console.log("scroll down")}
-        style={{
-          width: "100%",
-          height: "100vh",
-          transition: "backgroundColor .5s ease-out",
-        }}
-      >
-        <Splide
-          options={{
-            type: 'fade',
-            direction: 'ttb',
-            height: '100vh',  
-            updateOnMove:true,
-            arrows: false,
-            autoplay: true,
-            interval: 5000,
-            pauseOnHover: false,
-          }}
-        >
-          <SplideSlide>
-            <Main />
-          </SplideSlide>
-          <SplideSlide>
-            <About />
-          </SplideSlide>
-          <SplideSlide>
-            <Contact />
-          </SplideSlide>
-          <SplideSlide>
-            <Sign />
-          </SplideSlide>
-        </Splide>
-      </ReactScrollWheelHandler>
-    </> */
-    // end of @splidejs/react-splide
-  );
+		</>
+	);
 }
 
 export default Home;
-// <>
-{/* /* react-page-scroller */ }
-{/* <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
-        width: '5rem',
-        margin: '0 auto',
-      }}
-    >
-      <div style={{ cursor: 'pointer' }} onClick={() => handlePage(0)}>
-        1
-      </div>
-      <div style={{ cursor: 'pointer' }} onClick={() => handlePage(1)}>
-        2
-      </div>
-      <div style={{ cursor: 'pointer' }} onClick={() => handlePage(2)}>
-        3
-      </div>
-    </div> */}
-// <div
-//   style={{
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     flexDirection: 'column',
-//   }}
-// >
-//   <ReactPageScroller
-//     pageOnChange={handlePage}
-//     containerWidth={window.innerWidth *1}
-//     containerHeight={window.innerHeight * 1}
-//     customPageNumber={page}
-//     onBeforePageScroll={(e) => handleUnavailable(e)}
-//   >
-//     <Main />
-//     <About />
-//     <Contact />
-//   </ReactPageScroller>
-// </div> 
-{/* end of react-page-scroller  */ }
-  //  </>

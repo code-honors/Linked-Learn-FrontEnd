@@ -1,47 +1,5 @@
-// import React  from "react";
-// import {ReactNavbar} from "react-responsive-animate-navbar";
- import './navbar.scss';
- import Home from '../home/home';
-
-// function  Navbar()  {
-
-//     return (
-//       <ReactNavbar
-//         color="#252525"
-//         logo="assets/logo4.png"
-//         menu={[
-//           { name: "HOME",  to: "/" , component:Home },
-//           { name: "COURSES", to: "/" },
-//           { name: "ABOUT US", to: "/" },
-//           {name :  "PROFILE" , to: '/' },
-//         ]}
-//         social={[
-//           {
-//             name: "Linkedin",
-//             url: "",
-//             icon: ["fab", "linkedin-in"],
-//           },
-//           {
-//             name: "Facebook",
-//             url: "",
-//             icon: ["fab", "facebook-f"],
-//           },
-//           {
-//             name: "Instagram",
-//             url: "",
-//             icon: ["fab", "instagram"],
-//           },
-//           {
-//             name: "Twitter",
-//             url: "",
-//             icon: ["fab", "twitter"],
-//           },
-//         ]}
-//       />
-//     );
-// }
-
-
+import './navbar.scss';
+import Home from '../home/home';
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -90,16 +48,15 @@ function Navbar(props) {
         <AppBar style={{ backgroundColor: '#252525' }}>
           <Toolbar>
             <img
-              src="assets/logo.png"
-              width="190"
-              height="65"
+              src="assets/logo-color.png"
+              width="170"
               className="d-inline-block align-top"
               alt="Linked Learn logo"
             />
 
             <ul className='nav'>
           <li>
-            <NavLink exact to="/" >
+            <NavLink exact to="/dashboard" >
               HOME 
              </NavLink>
           </li>
@@ -115,7 +72,7 @@ function Navbar(props) {
           </li>
           <li>
             <NavLink to="/teacher/profile">
-              Profile
+              PROFILE
              </NavLink>
           </li>
         </ul>

@@ -6,7 +6,7 @@ let initialState = {
 const courses = (state = initialState, action) => {
   let { type, payload } = action;
   switch (type) {
-    case 'GET':
+    case 'GET_C':
       return { courses: payload, display: state.display };
     case 'FILTER':
       let courses = state.courses.filter(
