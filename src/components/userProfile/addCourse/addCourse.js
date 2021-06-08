@@ -3,13 +3,16 @@ import {If, Then, Else} from 'react-if';
 import Nav from '../nav/nav';
 import {useSelector} from 'react-redux';
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
 import "./addCourse.scss";
 
 function AddCourse() {
 
     const handleSubmitAddCourse = (event) => {
         event.preventDefault();
+		let name = event.target.name.value;
+		let img = event.target.img.value;
+		let category = event.target.category.value;
+		let classes = event.target.classes.value;
     }
 
 	const state = useSelector((state) => {
@@ -54,17 +57,18 @@ function AddCourse() {
 						required
 					/>
                 </Form.Group>
+				<Form.Group controlId="formGridState">
+					<Form.Control name="classes" type="text" placeholder="Classes URL"/>					
+				</Form.Group>
                 <Form.Group>
 					<Form.Control
 						// style={{ textAlign: "left" }}
+						id="courseDescription"
                         name="description"
                         placeholder="Course Description"
 						as="textarea" rows={3}
 					/>
                 </Form.Group>
-				<Form.Group as={Col} controlId="formGridState">
-					<Form.Control name="classes" type="number" min="1"/>					
-				</Form.Group>
 				<Button variant="primary" type="submit">
 					Submit
 				</Button>

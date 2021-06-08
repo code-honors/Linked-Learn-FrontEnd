@@ -7,22 +7,16 @@ import Routes from "./routes";
 function App(props) {
     // let history = useHistory();
 	const dispatch = useDispatch();
-
-	const initialCookiesCheck = () => {
-		const tokenAndUser = cookie.load("auth");
-		console.log(tokenAndUser);
-		dispatch(checkCookies(tokenAndUser));
-	};
-    
 	
-    // console.log({props})
-    
-    
+    // console.log({props})    
 	// console.log("====USER====", state.user);
 	// console.log("====LOGGED IN====", state.loggedIn);
     
 	useEffect(() => {
-        initialCookiesCheck();
+        const tokenAndUser = cookie.load("auth");
+		console.log('passed')
+		// console.log(tokenAndUser);
+		dispatch(checkCookies(tokenAndUser));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 

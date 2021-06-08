@@ -4,6 +4,7 @@
     width:80%;
     display: grid;
     grid-template-columns: 40% 60%;
+    max-height: 65vh;
 }
 
 .userNavDiv {
@@ -15,7 +16,8 @@
     background-color: black;
     box-shadow: 0 0 5px black;
     text-align: center;
-    // height: 25%;
+    // height: 60vh;
+    // max-height: 65vh;
     ul {
         display: flex;
         flex-direction: column;
