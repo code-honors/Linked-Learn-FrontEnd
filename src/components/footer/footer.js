@@ -45,7 +45,7 @@ const CssTextField = withStyles({
            
         },
         '& .MuiOutlinedInput-input' :{
-            padding:'12px',
+            padding:'4%',
             
             
         },

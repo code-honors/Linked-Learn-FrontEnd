@@ -20,7 +20,6 @@ export default function Routes() {
       <Route exact path="/courses" component={Courses}/>
       <Route exact path="/aboutus" component={AboutUs} />
       <Route path='*' component={NotFound} />
-
     </Switch>
   );
 }

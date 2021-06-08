@@ -12,17 +12,17 @@ function Nav() {
 					</NavLink>
 				</li>
 				<li>
-					<NavLink exact to={`${url}update`}>		
+					<NavLink exact to={`${url}profile/update`}>		
 						<span>Update Info</span>
 					</NavLink>
 				</li>
 				<li>
-					<NavLink exact to={`${url}courses`}>
+					<NavLink exact to={`${url}profile/courses`}>
 						<span>Courses</span>
 					</NavLink>
 				</li>
                 <li>
-					<NavLink exact to={`${url}events`}>
+					<NavLink exact to={`${url}profile/events`}>
 						<span>Events</span>
 					</NavLink>
 				</li>
