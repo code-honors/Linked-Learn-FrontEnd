@@ -27,10 +27,21 @@ export const getRemoteData = function (api , data) {
       .get(api)
       .then((res) => {
         console.log('step 4: actions third', res.body);
-        if(data === 'courses'){
-          dispatch(getCourses({ courses: res.body }));
-        }else if(data === 'teachers'){          
-          dispatch(getTeachers({ teachers: res.body }));
+        // eslint-disable-next-line default-case
+        switch(data){
+          case 'courses':
+            dispatch(getCourses({ courses: res.body }));
+            break;
+          case 'tachers':
+            dispatch(getTeachers({ teachers: res.body }));
+            break;
+          case 'tProfile':
+            dispatch(getProfile({ profile: res.body }));
+            break;
+          case 'tCourses':
+            dispatch(getTeacherCourses({ tCourses: res.body }));
+            break;
+
         }
       })
       .catch((e) => console.error(e.message));
@@ -44,11 +55,28 @@ export const getCourses = ({ courses }) => {
     payload: courses,
   };
 };
+
+export const getTeacherCourses = ({ tCourses }) => {
+  console.log('step 5: courses action', tCourses);
+  return {
+    type: 'GET_TC',
+    payload: tCourses,
+  };
+};
+
 export const getTeachers = ({ teachers }) => {
   console.log('step 5: teachers action', teachers);
   return {
     type: 'GET_T',
     payload: teachers,
+  };
+};
+
+export const getProfile = ({ profile }) => {
+  console.log('step 5: profile action', profile);
+  return {
+    type: 'GET_P',
+    payload: profile,
   };
 };
 
