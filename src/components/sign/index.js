@@ -7,7 +7,7 @@ import SignUpForm from "./signUpForm";
 import Logo from "../navbar/logo";
 import "./sign.scss";
 
-function SignInAndUp() {
+function Auth() {
 	let [switchForm, setSwitchFrom] = useState(true);
     const handleSwitchSignIn = () => {
         setSwitchFrom(true);
@@ -47,4 +47,4 @@ function SignInAndUp() {
 	);
 }
 
-export default SignInAndUp;
+export default Auth;
