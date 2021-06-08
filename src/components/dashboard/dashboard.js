@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader, SidebarFooter } from 'react-pro-sidebar';
+import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
-import { FaHeart, FaGem, FaUser, FaSignOutAlt ,FaHandshake} from 'react-icons/fa';
+import { FaHeart, FaGem, FaUser, FaSignOutAlt ,FaHandshake,FaUsers} from 'react-icons/fa';
 import './dashboard.scss';
 import Sticky from 'react-stickynode';
 import ProgressBar from 'react-animated-progress-bar';
@@ -24,6 +24,7 @@ import ContactMailIcon from '@material-ui/icons/ContactMail';
 import { Link } from 'react-router-dom';
 import {signOut} from '../../store/actions';
 import {useDispatch} from 'react-redux';
+
 
 function Dashboard() {
     const dispatch = useDispatch();
@@ -70,7 +71,7 @@ function Dashboard() {
                             </SidebarHeader>
                             <Menu iconShape="circle">
                              
-                                <MenuItem  style={{ marginTop: '40%' }} icon={<FaGem />}> Dashboard</MenuItem>
+                                <MenuItem  style={{ marginTop: '30%' }} icon={<FaGem />}> Dashboard</MenuItem>
                               
                                 <MenuItem icon={<FaHeart />}  to='/courses' title="Courses" > Courses
                                 <Link to="/courses" />
@@ -78,6 +79,9 @@ function Dashboard() {
                                
                                 <MenuItem icon={<FaUser />} title="Profile" > Profile
                                 <Link to="/profile/" />
+                                </MenuItem>                            
+                                <MenuItem icon={<FaUsers />} title="Profile" > Chat Room
+                                <Link to="" />
                                 </MenuItem>                            
                                 <MenuItem  icon={<FaHandshake />}>
                                 <Link to="/aboutus" />Get To Know us</MenuItem>
