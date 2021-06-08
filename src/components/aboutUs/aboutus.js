@@ -6,31 +6,31 @@ const About = () => {
     const cardInfo = [
         {
             image: "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
-            title: "Loram Loram",
-            text: "Loram Loram",
+            title: "Afnan Damra",
+            text: "Full Stack Developer",
         },
         {
             image:
                 "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
-            title: "Loram Loram",
-            text: "Loram Loram",
+            title: "Ruba Banat",
+            text: "Full Stack Developer",
         },
         {
             image:
                 "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
-            title: "Loram Loram",
-            text: "Loram Loram",
+            title: "Ahmad Alfrijat",
+            text: "Full Stack Developer",
         },
         {
             image:
                 "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
-            title: "Loram Loram",
-            text: "Loram Loram",
+            title: "Bashar Nofal",
+            text: "Full Stack Developer",
         },
         {
             image: "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
-            title: "Loram Loram",
-            text: "Loram Loram",
+            title: "Zaid Al-Asfar",
+            text: "Full Stack Developer",
         }
 
     ];
