@@ -1,58 +1,30 @@
-import { Switch, Route, NavLink, useRouteMatch } from "react-router-dom";
-import SignInAndUp from "../components/sign/index";
-import UserPage from "../components/userProfile/index";
-import NotFound from "../components/NotFound";
-import Home from "../components/home/home";
-import AboutUs from "../components/aboutUs/aboutus.js";
+import { Switch, Route } from 'react-router-dom';
+import Sign from '../components/sign/sign-in'
+import NotFound from '../components/NotFound';
+import Home from '../components/home/home';
+import TeacherCourses from '../components/teacherProfile/courses';
+import curriculum from '../components/teacherProfile/curriculum';
+import Dashboard from '../components/dashboard/dashboard'
+import Courses from '../components/courses/all';
+import AboutUs from '../components/aboutUs/aboutus.js';
+
 
 export default function Routes() {
-	const { url } = useRouteMatch();
-
-	return (
-		<>
-			{/* <div>
-				<ul>
-					<li>
-						<NavLink exact to={`profile/`}>
-							<span>Profile</span>
-						</NavLink>
-					</li>
-					<li>
-						<NavLink exact to={`sign-in-up/`}>
-							<span>Sign In</span>
-						</NavLink>
-					</li>
-					<li>
-						<NavLink exact to={`${url}profile/courses`}>
-							<span>Courses</span>
-						</NavLink>
-					</li>
-					<li>
-						<NavLink exact to={`${url}profile/events`}>
-							<span>Events</span>
-						</NavLink>
-					</li>
-				</ul>
-			</div> */}
-            <SignInAndUp/>
-            {/* <UserPage/> */}
-
-			{/* <Switch>
-				<Route exact path="/sign-in-up" component={SignInAndUp} />
-				<Route exact path="/" component={Home} />
-				<Route exact path="/aboutus" component={AboutUs} />
-				<Route component={NotFound} />
-			</Switch> */}
-		</>
-	);
+  return (
+    <Switch>
+      <Route exact path="/signin" component={Sign} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/teacher/profile" component={TeacherCourses} />
+      <Route exact path="/teacher/profile/curriculum" component={ curriculum} />
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/courses" component={Courses}/>
+      <Route exact path="/aboutus" component={AboutUs} />
+      <Route path='*' component={NotFound} />
+    </Switch>
+  );
 }
-// import UserPage from '../components/userProfile/index';
+    
+ 
 
-// export default function Routes() {
-//   return (
-//     // <Switch>
-//     //   <Route exact path="/student" component={UserPage} />
-//     //   {/* <Route component={NotFound} /> */}
-//     // </Switch>
-//   );
-// }
+
+
