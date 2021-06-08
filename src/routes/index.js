@@ -7,25 +7,27 @@ import curriculum from '../components/teacherProfile/curriculum';
 import Dashboard from '../components/dashboard/dashboard'
 import Courses from '../components/courses/all';
 import AboutUs from '../components/aboutUs/aboutus.js';
+import Index from '../components/course';
 
 
 export default function Routes() {
   return (
     <Switch>
+      <Route exact path="/course" component={Index} />  
       <Route exact path="/signin" component={Sign} />
       <Route exact path="/" component={Home} />
       <Route exact path="/teacher/profile" component={TeacherCourses} />
-      <Route exact path="/teacher/profile/curriculum" component={ curriculum} />
+      <Route exact path="/teacher/profile/curriculum" component={curriculum} />
       <Route exact path="/dashboard" component={Dashboard} />
-      <Route exact path="/courses" component={Courses}/>
+      <Route exact path="/courses" component={Courses} />
       <Route exact path="/aboutus" component={AboutUs} />
       <Route path='*' component={NotFound} />
 
     </Switch>
   );
 }
-    
- 
+
+
 
 
 
