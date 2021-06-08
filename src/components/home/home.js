@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Main from '../main/main';
 import About from '../about/about';
 import Contact from '../contact/contact';
-import Sign from '../sign/sign-in';
+import Sign from '../sign/signInForm';
 import './home.scss';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';

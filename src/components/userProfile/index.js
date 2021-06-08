@@ -7,7 +7,7 @@ import UserEvents from './userEvents/userEvents';
 import './index.scss'
 
 function UserPage(props) {
-    let { path } = useRouteMatch();
+    const { path } = useRouteMatch();
     // console.log({path})
     return (
         <main id="userAccountContainer">
@@ -16,9 +16,9 @@ function UserPage(props) {
             </>
             <Switch>
                 <Route exact path={`${path}profile`} component={UserProfile}/>
-                <Route exact path={`${path}update`} component={UserUpdateInfo}/>
-                <Route exact path={`${path}courses`} component={UserCourses}/>
-                <Route exact path={`${path}events`} component={UserEvents}/>
+                <Route exact path={`${path}profile/update`} component={UserUpdateInfo}/>
+                <Route exact path={`${path}profile/courses`} component={UserCourses}/>
+                <Route exact path={`${path}profile/events`} component={UserEvents}/>
             </Switch>
         </main>
     )

@@ -1,0 +1,35 @@
+.aboutClass{
+    margin-left:5%; 
+}
+
+.reviewClass{
+    margin-left:5%; 
+}
+
+.navClass{
+   
+   margin-left: 5%;
+   
+}
+
+.navClass ul{  
+    display: flex;
+   flex-wrap: nowrap;
+   
+}
+
+.navClass li{
+    margin:12%;
+    list-style-type: none;
+    color: black;
+    
+}
+
+.navClass li a{
+    color: black;
+}
+
+.navClass li a:hover{
+    color:#ef2853;
+}
+

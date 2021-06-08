@@ -1,5 +1,23 @@
-import superagent from 'superagent';
-// const api = 'https://run.mocky.io/v3/86db0ece-4dea-44d6-9913-3fd9c13b03aa';
+import superagent from "superagent";
+import cookie from "react-cookies";
+import jwt from "jsonwebtoken";
+
+const api = "https://linked-learn.herokuapp.com";
+
+export const signUpAuth = (username, email, password, role) => {
+	return async (dispatch) => {
+		try {
+			const response = await superagent
+				.post(`${api}/auth/signup`)
+				.send({ username, email, password, role });
+			const { user, token } = response.body;
+			cookie.save("auth", token);
+			dispatch(signIn(user));
+		} catch (error) {
+			console.error(error);
+		}
+	};
+};
 
 export const getRemoteData = function (api , data) {
   console.log('step 2: actions first', api);
