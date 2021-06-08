@@ -106,7 +106,7 @@ const signIn = (user) => {
         payload: user,
     };
 };
-const signOut = (user) => {
+export const signOut = (user) => {
     return {
         type: "SIGN-UP",
         payload: user,
