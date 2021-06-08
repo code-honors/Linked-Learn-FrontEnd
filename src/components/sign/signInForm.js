@@ -8,9 +8,10 @@ function SignInForm(props) {
 	const dispatch = useDispatch();
 
 	const state = useSelector((state) => {
+		console.log('state',state);
 		return {
-			user: state.signIn.user,
-			loggedIn: state.signIn.loggedIn,
+			user: state.singInReducer.user,
+			loggedIn: state.singInReducer.loggedIn,
 		};
 	});
 
