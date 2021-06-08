@@ -1,4 +1,12 @@
-.userNavDiv{
+#userAccountContainer{
+    margin: 5% 5% 5% 3%;
+    // text-align: center;
+    width:80%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.userNavDiv {
     position: sticky;
     top: 0;
     width: 17em;
@@ -7,19 +15,19 @@
     background-color: black;
     box-shadow: 0 0 5px black;
     text-align: center;
-    height: 27.5em;
+    // height: 25%;
     ul {
         display: flex;
         flex-direction: column;
         align-content:space-between;    
         margin-top: 0%;
-        padding: 2em;
+        // padding: 2em;
         li {
             list-style: none;
             margin-left: -2%;
             // margin: 5% 2% 5% -10%;
-            padding: 2em 1em;
-            a {
+            padding: 1em 0.5em;
+            span {
                 display: inline;
                 text-decoration: none;
                 padding: 1.5% ;
@@ -28,12 +36,12 @@
                 font-weight: bolder;
                 margin: 0;
                 transition: all 0.2s linear 0s;
-                &:before{
+                &:before    {
                     content: url('../../../assets/arrow-right.svg');
                     opacity: 0;
                     transition: all 0.2s linear 0s;
                 }
-                &:hover{
+                &:hover {
                     color: #FF1949;
                     text-indent: -20px;
                     &:before {

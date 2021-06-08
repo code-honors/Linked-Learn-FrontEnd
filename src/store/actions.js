@@ -44,12 +44,12 @@ const filter = (category) => {
 	};
 };
 
-export const checkCookies = (token) => {
+export const checkCookies = (tokenAndUser) => {
 	return (dispatch) => {
 		try {
-			const user = jwt.verify(token, "ePzscxrRn7toGZ1Hrh4OICHV");
-			cookie.save("auth", token);
-			dispatch(signIn(user));
+			const user = jwt.verify(tokenAndUser.token, "ePzscxrRn7toGZ1Hrh4OICHV");
+			cookie.save("auth", tokenAndUser);
+			dispatch(signIn(tokenAndUser.user));
 		} catch (error) {
 			console.error("validation error", error);
 		}
@@ -59,12 +59,13 @@ export const checkCookies = (token) => {
 export const signInAuth = (username, password) => {
 	return (dispatch) => {
 		setLogin();
-
-		const validateToken = (token) => {
+		const validateToken = (response) => {
 			try {
-				const user = jwt.verify(token, "ePzscxrRn7toGZ1Hrh4OICHV");
-				cookie.save("auth", token);
-				dispatch(signIn(user));
+                // console.log({responseUser})
+				const user = jwt.verify(response.token, "ePzscxrRn7toGZ1Hrh4OICHV");
+				cookie.save("auth", response);
+				// cookie.save('user', responseUser);
+				dispatch(signIn(response.user));
 			} catch (error) {
 				console.error("validation error", error);
 			}
@@ -82,8 +83,8 @@ export const signInAuth = (username, password) => {
 								"utf8"
 							).toString("base64")
 					);
-
-				validateToken(response.body.token);
+                                console.log( 'response.body.user', response.body)
+				validateToken(response.body);
 			} catch (error) {
 				console.error("Login error", error);
 			}
@@ -92,15 +93,17 @@ export const signInAuth = (username, password) => {
 };
 
 const signIn = (user) => {
+	console.log('actions', {user})
 	return {
 		type: "SIGN-IN",
 		payload: user,
 	};
 };
 
-const signOut = (user) => {
+export const signOut = () => {
+    cookie.remove('auth');
 	return {
-		type: "SIGN-UP",
-		payload: user,
+		type: "SIGN-OUT",
+		payload: null,
 	};
 };

@@ -1,31 +1,39 @@
 import { NavLink, useRouteMatch } from "react-router-dom";
-import './nav.scss';
+import ACL from "../../acl/acl";
+import "./nav.scss";
 
 function Nav() {
 	let { url } = useRouteMatch();
 	return (
-		<div className='userNavDiv'>
+		<div className="userNavDiv">
 			<ul>
 				<li>
-					<NavLink exact to={`${url}profile`}>
-						<span>Profile</span> 
+					<NavLink exact to={`/user/profile`}>
+						<span>Profile</span>
 					</NavLink>
 				</li>
 				<li>
-					<NavLink exact to={`${url}profile/update`}>		
+					<NavLink exact to={`/user/update`}>
 						<span>Update Info</span>
 					</NavLink>
 				</li>
 				<li>
-					<NavLink exact to={`${url}profile/courses`}>
+					<NavLink exact to={`/user/courses`}>
 						<span>Courses</span>
 					</NavLink>
 				</li>
-                <li>
-					<NavLink exact to={`${url}profile/events`}>
+				<li>
+					<NavLink exact to={`/user/events`}>
 						<span>Events</span>
 					</NavLink>
 				</li>
+				<ACL capability="teacher">
+					<li>
+						<NavLink exact to={`/user/add-course`}>
+							<span>Add Course</span>
+						</NavLink>
+					</li>
+				</ACL>
 			</ul>
 		</div>
 	);

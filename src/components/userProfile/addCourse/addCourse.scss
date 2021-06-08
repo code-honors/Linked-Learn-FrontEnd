@@ -1,5 +1,3 @@
-@import "~bootstrap/scss/bootstrap";
-
 #userAccountContainer{
     margin: 5% 5% 5% 3%;
     // text-align: center;
@@ -8,7 +6,7 @@
     grid-template-columns: 40% 60%;
 }
 
-.accountFormDiv {
+#accountFormDiv {
     width: 90%;
     margin: 5px 5px 5px 0;
     background-color: white;
@@ -30,10 +28,6 @@
 
         button, input{
             border-radius: 0;
-        }
-
-        #showPasswordCheckbox:checked{
-            background-color: #FF1949;
         }
 
         button{

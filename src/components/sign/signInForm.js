@@ -1,10 +1,13 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import {useHistory} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signInAuth } from "../../store/actions";
+import { useEffect } from "react";
 
 function SignInForm(props) {
+	let history = useHistory();
 	const dispatch = useDispatch();
 
 	const state = useSelector((state) => {
@@ -30,6 +33,10 @@ function SignInForm(props) {
 		let password = event.target.password.value;
 		dispatch(signInAuth(username, password));
 	};
+
+	useEffect(() => {
+		if(state.loggedIn) history.push("/dashboard"); 
+	},[state.loggedIn])
 
 	return (
 		<div className="sign-in">

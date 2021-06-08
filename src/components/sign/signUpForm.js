@@ -15,15 +15,15 @@ function SignUpForm() {
 			: (document.querySelector(".password").type = "password");
 	};
 
-	const state = useSelector((state) => {
-		return {
-			user: state.signIn.user,
-			loggedIn: state.signIn.loggedIn,
-		};
-	});
+	// const state = useSelector((state) => {
+	// 	return {
+	// 		user: state.signIn.user,
+	// 		loggedIn: state.signIn.loggedIn,
+	// 	};
+	// });
 
-	console.log("user =====", state.user);
-	console.log("loggedIn =====", state.loggedIn);
+	// console.log("user =====", state.user);
+	// console.log("loggedIn =====", state.loggedIn);
 
 	const handleSubmitSignUp = (event) => {
 		event.preventDefault();
@@ -68,8 +68,8 @@ function SignUpForm() {
 					<Form.Check
 						style={{ textAlign: "left" }}
 						id="showPasswordCheckBox"
-						type="checkbox"
 						label="Show Password"
+						type="checkbox"
 						onChange={handleShowPassword}
 					/>
 				</Form.Group>
