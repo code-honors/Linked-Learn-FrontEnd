@@ -39,6 +39,7 @@ import { removeCookie, signOut } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import cookie from "react-cookies";
 
+
 function Dashboard() {
 	let history = useHistory();
 	const dispatch = useDispatch();
@@ -64,6 +65,7 @@ function Dashboard() {
 		});
 		AOS.refresh();
 	}, []);
+
 
 	const [collapsed, setCollapsed] = useState(false);
 	const handleCollapsedChange = (checked) => {
