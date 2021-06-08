@@ -11,7 +11,6 @@ function Logo() {
                 <img
                     src="assets/logo-color.png"
                     width="220"
-                    // height="77"
                     className="d-inline-block align-top"
                     alt="Linked Learn logo"
                 />

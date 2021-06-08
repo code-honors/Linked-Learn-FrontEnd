@@ -19,29 +19,41 @@ export const signUpAuth = (username, email, password, role) => {
 	};
 };
 
-export const getRemoteData = function (api) {
-	return (dispatch) => {
-		return superagent
-			.get(api)
-			.then((res) => {
-				dispatch(getCourses({ courses: res.body }));
-			})
-			.catch((e) => console.error(e.message));
-	};
+export const getRemoteData = function (api , data) {
+  console.log('step 2: actions first', api);
+  return (dispatch) => {
+    console.log('step 3: actions second', dispatch);
+    return superagent
+      .get(api)
+      .then((res) => {
+        console.log('step 4: actions third', res.body);
+        // eslint-disable-next-line default-case
+        switch(data){
+          case 'courses':
+            dispatch(getCourses({ courses: res.body }));
+            break;
+          case 'tachers':
+            dispatch(getTeachers({ teachers: res.body }));
+            break;
+          case 'tProfile':
+            dispatch(getProfile({ profile: res.body }));
+            break;
+          case 'tCourses':
+            dispatch(getTeacherCourses({ tCourses: res.body }));
+            break;
+
+        }
+      })
+      .catch((e) => console.error(e.message));
+  };
 };
 
-const getCourses = ({ courses }) => {
-	return {
-		type: "GET",
-		payload: courses,
-	};
-};
-
-const filter = (category) => {
-	return {
-		type: "FILTER",
-		payload: category,
-	};
+export const getCourses = ({ courses }) => {
+  console.log('step 5: courses action', courses);
+  return {
+    type: 'GET_C',
+    payload: courses,
+  };
 };
 
 export const checkCookies = (tokenAndUser) => {
@@ -92,18 +104,47 @@ export const signInAuth = (username, password) => {
 	};
 };
 
-const signIn = (user) => {
-	console.log('actions', {user})
-	return {
-		type: "SIGN-IN",
-		payload: user,
-	};
-};
-
 export const signOut = () => {
     cookie.remove('auth');
 	return {
 		type: "SIGN-OUT",
 		payload: null,
 	};
+  
+export const getTeacherCourses = ({ tCourses }) => {
+  console.log('step 5: courses action', tCourses);
+  return {
+    type: 'GET_TC',
+    payload: tCourses,
+  };
+};
+
+export const getTeachers = ({ teachers }) => {
+  console.log('step 5: teachers action', teachers);
+  return {
+    type: 'GET_T',
+    payload: teachers,
+  };
+};
+
+export const getProfile = ({ profile }) => {
+  console.log('step 5: profile action', profile);
+  return {
+    type: 'GET_P',
+    payload: profile,
+  };
+};
+
+export const filter = (category) => {
+  return {
+    type: 'FILTER',
+    payload: category,
+  };
+};
+
+const signIn = (user) => {
+    return {
+        type: "SIGN-IN",
+        payload: user,
+    };
 };

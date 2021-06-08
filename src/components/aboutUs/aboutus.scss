@@ -1,10 +1,31 @@
 .grid {
-    width: 100%;
+    width: 90%;
 	display: flex;
-    margin-top: 200px;
-    margin-bottom: 150px;
+    flex-wrap: wrap ;
+    margin-top:  5%;
+    margin-bottom:  5%;
+    margin-left: 5%;
+    justify-content: center;
+    // grid-template-columns: 1fr 1fr 1fr ;
 }
 
 .box{
     margin: 20px;
 }
+
+
+.sub{
+    font-size: 65px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    color: rgb(22, 22, 22);
+    margin-left: 33%;
+    margin-top: 3%;
+    }
+    .sub:after {
+        content: "";
+        display: block; 
+        margin-left:10px; 
+        width: 10%; 
+        padding-top: 10px;
+        border-bottom: 3px solid #ef2853; 
+    }
