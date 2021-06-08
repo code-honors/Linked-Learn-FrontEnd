@@ -15,8 +15,11 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import Carousel from 'react-bootstrap/Carousel';
-import Footer2 from '../footer/footer2'
-
+import Footer2 from '../footer/footer2';
+import HeadsetIcon from '@material-ui/icons/Headset';
+import HomeIcon from '@material-ui/icons/Home';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
 
 function Dashboard() {
     useEffect(() => {
@@ -169,7 +172,7 @@ function Dashboard() {
                         <Carousel.Caption>
                             <div style={{ marginLeft: '45%', marginTop: '-20%' }} data-aos="fade-left">
                                 <h3> <strong>Thomas Edison</strong></h3>
-                                <p>Never stop learning. Read the entire panorama of literature..</p>
+                                <p>"Never stop learning. Read the entire panorama of literature."</p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -179,11 +182,10 @@ function Dashboard() {
                             src="assets/slide1.png"
                             alt="Second slide"
                         />
-
                         <Carousel.Caption>
                             <div style={{ marginLeft: '50%', marginTop: '-20%' }} data-aos="fade-left">
                                 <h3 > <strong>Albert Einstein</strong></h3>
-                                <p>Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world..</p>
+                                <p>"Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world."</p>
 
                             </div>
                         </Carousel.Caption>
@@ -194,17 +196,42 @@ function Dashboard() {
                             src="assets/3.png"
                             alt="Third slide"
                         />
-
                         <Carousel.Caption>
                             <div style={{ marginLeft: '30%', marginTop: '-20%' }} data-aos="fade-left">
                                 <h3> <strong>Ibn Sina</strong></h3>
                                 <p>
-                                    The more brilliant the lightning, the quicker it disappears.
+                                    "The more brilliant the lightning, the quicker it disappears.""
                                 </p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
+            </div>
+            <div className='support' data-aos="flip-down">
+                <div style={{ width: '55%' }} >
+                    <HeadsetIcon style={{ color: '#ef2853', fontSize: '43px' }}>
+                    </HeadsetIcon>
+                    <h4><strong>Fast support</strong></h4>
+                    <p>In case you have any questions, our team will gladly help</p>
+                </div>
+                <div style={{ width: '55%' }}>
+                    <HomeIcon style={{ color: '#ef2853', fontSize: '43px' }}>
+                    </HomeIcon>
+                    <h4><strong> What we do</strong></h4>
+                    <p>Sharing knowledge worldwide & offering the best courses.</p>
+                </div>
+                <div style={{ width: '55%' }}>
+                    <LocationOnIcon style={{ color: '#ef2853', fontSize: '43px' }}>
+                    </LocationOnIcon>
+                    <h4><strong>Where we are</strong></h4>
+                    <p>Learn online from wherever you want or find our offices.</p>
+                </div>
+                <div style={{ width: '55%' }}>
+                    <ContactMailIcon style={{ color: '#ef2853', fontSize: '43px' }}>
+                    </ContactMailIcon>
+                    <h4><strong>Contact us</strong></h4>
+                    <p>Let’s find a perfect course for you now! Send us a request!</p>
+                </div>
             </div>
             <Footer2 />
         </>

@@ -84,3 +84,12 @@ grid-template-columns: 1fr 4fr;
         width:84%;
         margin-bottom:5%;
     }
+    .support{
+        width:74%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin-top: 10%;
+        margin-left: 25%;
+        margin-bottom: 10%;
+    }
