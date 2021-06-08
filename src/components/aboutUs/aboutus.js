@@ -90,7 +90,7 @@ const About = () => {
     return (
         <>
             <Navbar />
-            <h1 className='sub' data-aos="fade-left">The Founders</h1>
+            <h1 className='sub8' data-aos="fade-left">The Founders</h1>
             <div className="grid" data-aos="fade-right">
                 {cardInfo.map(renderCard)}
             </div>
