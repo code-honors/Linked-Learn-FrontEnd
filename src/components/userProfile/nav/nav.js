@@ -22,11 +22,11 @@ function Nav() {
 						<span>Courses</span>
 					</NavLink>
 				</li>
-				<li>
+				{/* <li>
 					<NavLink exact to={`/user/events`}>
 						<span>Events</span>
 					</NavLink>
-				</li>
+				</li> */}
 				<ACL capability="teacher">
 					<li>
 						<NavLink exact to={`/user/add-course`}>

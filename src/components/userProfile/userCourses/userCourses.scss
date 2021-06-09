@@ -10,13 +10,20 @@
 .userCoursesDiv {
     overflow-y: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     width: 100%;
     margin: 5px 5px 5px 0;
     background-color: white;
     box-shadow: 0 0 5px grey;
-    // margin-bottom: 0.5em;
+    max-height: 65vh; 
+    overflow-x: auto;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
     .card{
         box-shadow: 0 0 5px grey;
         margin: 4% 2%;

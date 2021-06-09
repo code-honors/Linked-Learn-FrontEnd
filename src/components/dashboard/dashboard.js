@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import SidePar from './sidepar'
 import Background from './background';
 import CoursesDash from './courses';
@@ -9,21 +9,12 @@ import Slideshow from './slideShow';
 import Support from './support';
 import './style/dashboard.scss';
 import Footer2 from "../footer/footer2";
-import { Link, useHistory } from "react-router-dom";
-import { signOut } from "../../store/actions";
-import { useDispatch, useSelector } from "react-redux";
-import cookie from "react-cookies";
+import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Dashboard(){
-  
 	let history = useHistory();
-	const dispatch = useDispatch();
-
-	const handleLogout = () => {
-		// console.log(5)
-		cookie.remove('auth', {path:'/'});
-		dispatch(signOut())
-	}
+	
 		const state = useSelector(state => {
 		return {
 			user: state.signIn.user,
@@ -33,6 +24,7 @@ function Dashboard(){
 
 	useEffect(()=> {
 		if(state.loggedIn === false) history.push('/');
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state.loggedIn]);
   
 	return (

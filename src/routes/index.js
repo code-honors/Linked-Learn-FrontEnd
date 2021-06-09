@@ -7,7 +7,7 @@ import curriculum from '../components/teacherProfile/curriculum';
 // import StudentCourses from '../components/studentProfile/course';
 import StudentCurriculum from '../components/studentProfile/curriculum';
 import Dashboard from '../components/dashboard/dashboard'
-import Courses from '../components/courses/all';
+import AllCourses from '../components/courses/index';
 import AboutUs from '../components/aboutUs/aboutus.js';
 import Join from '../components/chating/Join/Join';
 import Chat from '../components/chating/Chat/Chat';
@@ -58,7 +58,7 @@ export default function Routes() {
 
       <Route exact path="/student/profile/curriculum" component={StudentCurriculum} />
       <Route exact path="/dashboard" component={Dashboard} />
-      <Route exact path="/courses" component={Courses} />
+      <Route exact path="/courses" component={AllCourses} />
       <Route exact path="/aboutus" component={AboutUs} />
       <Route path='*' component={NotFound} />
     </Switch>

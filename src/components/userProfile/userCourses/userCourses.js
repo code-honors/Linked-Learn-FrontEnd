@@ -2,6 +2,8 @@ import Card from "react-bootstrap/Card";
 import { If, Then, Else } from "react-if";
 import Nav from "../nav/nav";
 import { useSelector } from "react-redux";
+import Navbar from "../../navbar/navbar";
+import Footer from "../../footer/footer";
 import "./userCourses.scss";
 
 function UserCourses(props) {
@@ -34,41 +36,50 @@ function UserCourses(props) {
 	});
 
 	return (
-		<main id="userAccountContainer">
-			<If condition={state.loggedIn}>
-				<Then>
-					<>
-						<Nav />
-					</>
-					<div className="userCoursesDiv">
-						{userCourses.map((course) => {
-							return (
-								<Card style={{ width: "18rem" }}>
-									<Card.Img
-										variant="top"
-										src={course.image}
-										height="200"
-										// width="100"
-									/>
-									<Card.Body>
-										<Card.Title>{course.title}</Card.Title>
-									</Card.Body>
-									<Card.Body>
-										<Card.Link href="#">
-											View Details
-										</Card.Link>
-										<Card.Link href="#" className="remove">
-											Remove
-										</Card.Link>
-									</Card.Body>
-								</Card>
-							);
-						})}
-					</div>
-				</Then>
-				<Else>Please Sign In</Else>
-			</If>
-		</main>
+		<>
+			<Navbar />
+			<main id="userAccountContainer">
+				<If condition={state.loggedIn}>
+					<Then>
+						<>
+							<Nav />
+						</>
+						<div className="userCoursesDiv">
+							{userCourses.map((course) => {
+								return (
+									<Card style={{ width: "18rem" }}>
+										<Card.Img
+											variant="top"
+											src={course.image}
+											height="200"
+											// width="100"
+										/>
+										<Card.Body>
+											<Card.Title>
+												{course.title}
+											</Card.Title>
+										</Card.Body>
+										<Card.Body>
+											<Card.Link href="#">
+												View Details
+											</Card.Link>
+											<Card.Link
+												href="#"
+												className="remove"
+											>
+												Remove
+											</Card.Link>
+										</Card.Body>
+									</Card>
+								);
+							})}
+						</div>
+					</Then>
+					<Else>Please Sign In</Else>
+				</If>
+			</main>
+			<Footer/>
+		</>
 	);
 }
 

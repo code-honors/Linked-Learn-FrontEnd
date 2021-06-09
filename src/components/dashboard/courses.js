@@ -29,9 +29,7 @@ function CoursesDash(){
 				</h2>
 				<br />
 				<br />
-                <div className='courses' >
 				<Courses />
-                </div>
 			</div>
         </>
     )

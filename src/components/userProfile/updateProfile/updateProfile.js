@@ -5,6 +5,8 @@ import Nav from "../nav/nav";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
+import Navbar from "../../navbar/navbar";
+import Footer from "../../footer/footer";
 import "./updateProfile.scss";
 
 function UserUpdateInfo(props) {
@@ -23,7 +25,7 @@ function UserUpdateInfo(props) {
 		let role = list.options[list.selectedIndex].value.toLowerCase();
 		let password = event.target.password.value;
 	};
-	
+
 	const handleShowPassword = () => {
 		let type = document.querySelector("#password").type;
 		type === "password"
@@ -38,60 +40,64 @@ function UserUpdateInfo(props) {
 	}, []);
 
 	return (
-		<main id="userAccountContainer">
-			<If condition={state.loggedIn}>
-				<Then>
-					<>
-						<Nav />
-					</>
-					<div className="accountFormDiv">
-						<Form
-							id="accountForm"
-							onSubmit={(event) => handleSubmitUpdate(event)}
-						>
-							<Form.Row>
-								<Form.Group as={Col}>
-									<Form.Label>Username</Form.Label>
-									<Form.Control
-										id="username"
-										type="text"
-										required
-									/>
-								</Form.Group>
+		<>
+			<Navbar />
+			<main id="userAccountContainer">
+				<If condition={state.loggedIn}>
+					<Then>
+						<>
+							<Nav />
+						</>
+						<div className="accountFormDiv">
+							<Form
+								id="accountForm"
+								onSubmit={(event) => handleSubmitUpdate(event)}
+							>
+								<Form.Row>
+									<Form.Group as={Col}>
+										<Form.Label>Username</Form.Label>
+										<Form.Control
+											id="username"
+											type="text"
+											required
+										/>
+									</Form.Group>
 
-								<Form.Group as={Col}>
-									<Form.Label>E-mail</Form.Label>
+									<Form.Group as={Col}>
+										<Form.Label>E-mail</Form.Label>
+										<Form.Control
+											id="email"
+											type="email"
+											required
+										/>
+									</Form.Group>
+								</Form.Row>
+								<Form.Group>
+									<Form.Label>Password</Form.Label>
 									<Form.Control
-										id="email"
-										type="email"
+										name="password"
+										id="password"
+										type="password"
 										required
 									/>
+									<Form.Check
+										id="showPasswordCheckBox"
+										type="checkbox"
+										label="Show Password"
+										onChange={handleShowPassword}
+									/>
 								</Form.Group>
-							</Form.Row>
-							<Form.Group>
-								<Form.Label>Password</Form.Label>
-								<Form.Control
-									name="password"
-									id="password"
-									type="password"
-									required
-								/>
-								<Form.Check
-									id="showPasswordCheckBox"
-									type="checkbox"
-									label="Show Password"
-									onChange={handleShowPassword}
-								/>
-							</Form.Group>
-							<Button variant="primary" type="submit">
-								Update
-							</Button>
-						</Form>
-					</div>
-				</Then>
-				<Else>Please Sign In</Else>
-			</If>
-		</main>
+								<Button variant="primary" type="submit">
+									Update
+								</Button>
+							</Form>
+						</div>
+					</Then>
+					<Else>Please Sign In</Else>
+				</If>
+			</main>
+			<Footer/>
+		</>
 	);
 }
 

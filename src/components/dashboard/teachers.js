@@ -20,7 +20,7 @@ function TeachersDiv() {
             <div className="teacher" data-aos="fade-right">
                 <h2
                     className="sub5"
-                    style={{ marginTop: "10%", marginLeft: "5%" }}
+                    style={{ marginTop: "1%", marginLeft: "5%" }}
                 >
                     <strong> Our Teachers</strong>
                 </h2>

@@ -10,16 +10,6 @@ import {Link,  useParams} from 'react-router-dom';
 const api = 'https://linked-learn.herokuapp.com/all/teachers';
 
 const useStyles = makeStyles((theme) => ({
-      root: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr',
-        '& > *': {
-          margin: theme.spacing(3),
-          
-        },
-        // flexDirection:'column',
-        justifyContent:'center'
-      },
       large: {
         width: theme.spacing(20),
         height: theme.spacing(20),
@@ -41,10 +31,11 @@ const Teachers = (props) => {
     <>
     
       {/* <Container className='teachers-container'> */}
+      <div className='teachers-container'>
         {teachers.map((teacher) => {
           return (
           // <div className='teachers'>
-            <div className={classes.root}>
+            <div key={teacher.firstname} className="eachTeacher">
              <Link to={`/teacher/profile/${teacher.id}`}> 
             <Avatar alt={teacher.firstname} src={teacher.profilepic} className={classes.large} /> <br/>
              </Link>
@@ -53,6 +44,7 @@ const Teachers = (props) => {
           // </div>
           );
         })}
+      </div>
       {/* </Container> */}
     </>
   );

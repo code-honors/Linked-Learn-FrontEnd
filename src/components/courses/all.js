@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { getRemoteData } from '../../store/actions';
 import { useEffect } from 'react';
-import { Card, Container, Figure } from 'react-bootstrap';
+import { Card, Figure } from 'react-bootstrap';
 import './courses.scss';
 
 const api = 'https://linked-learn.herokuapp.com/courses';
@@ -19,19 +19,19 @@ const Courses = (props) => {
       : props.courses.courses;
   return (
     <>
-      <Container className='courses-container'>
+      <div className='courses-container'>
         {courses.map((course) => {
           return (
             <Card
               className="card"
               key={course.id}
-              style={{ width: '18rem', height: '85vh' }}
+              style={{ width: '18rem' }}
             >
               <Card.Img variant="top" src={course.img} />
               <Card.Body>
                 <Card.Title>{course.name}</Card.Title>
                 <Card.Text>{course.category}</Card.Text>
-                <Figure.Caption>{course.description}</Figure.Caption>
+                <Figure.Caption className="courseDescription" >{course.description}</Figure.Caption>
                 <Card.Link
                   href={`/courses/${course.id}`}
                   style={{ float: 'left', color:'black'}}
@@ -48,7 +48,8 @@ const Courses = (props) => {
             </Card>
           );
         })}
-      </Container>
+      </div>
+
     </>
   );
 };
