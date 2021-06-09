@@ -1,5 +1,5 @@
 import "./navbar.scss";
-import Home from "../home/home";
+// import Home from "../home/home";
 import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
@@ -10,6 +10,7 @@ import Slide from "@material-ui/core/Slide";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
 import { NavLink } from "react-router-dom";
+import logo from './logo-color.png';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -44,7 +45,7 @@ function Navbar(props) {
 				<AppBar style={{ backgroundColor: "#252525" }}>
 					<Toolbar>
 						<img
-							src="assets/logo-color.png"
+							src={logo}
 							width="170"
 							className="d-inline-block align-top"
 							alt="Linked Learn logo"
