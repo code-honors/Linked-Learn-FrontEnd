@@ -1,0 +1,28 @@
+.whyChoose{
+        width:30%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 5%;
+        margin-left: 25%;
+    
+    }
+
+.progress-bar{
+            background: none !important;
+        }
+    
+        .rate{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+        .progresss{
+            display: flex;
+            flex-direction: column;
+            margin-top: 4%;
+            margin-right:7%;
+        }
+        .inner-rect-bar{
+            background-color:#ef2853 !important;
+        }

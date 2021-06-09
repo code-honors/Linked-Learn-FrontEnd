@@ -24,14 +24,12 @@ export const getRemoteData = function (api, data) {
 		return superagent
 			.get(api)
 			.then((res) => {
-				console.log('teachers',res.body)
 				// eslint-disable-next-line default-case
 				switch (data) {
 					case "courses":
 						dispatch(getCourses({ courses: res.body }));
 						break;
 					case "teachers":
-						console.log(3)
 						dispatch(getTeachers({ teachers: res.body }));
 						break;
 					case "tProfile":

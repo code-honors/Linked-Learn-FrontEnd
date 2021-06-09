@@ -1,0 +1,29 @@
+// #root{
+//     overflow-x: hidden;
+// }
+
+.dev {
+    background-image: url(./dashboard.gif);
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    z-index:-1;
+    // overflow-x: hidden;
+
+
+}
+.words {
+    position: absolute;
+    top:20%;
+    z-index: 5;
+    margin-left: 22%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    color:#fff;
+    
+}
+.words h3{
+    font-size: 32px;
+    
+}

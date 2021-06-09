@@ -1,0 +1,30 @@
+.coursesDiv{
+    margin-left: 21% ;
+    width: 100%;
+}
+.sub5{
+        font-size: 38px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif ;
+        color: rgb(22, 22, 22);
+        }
+        .sub5:after {
+            content: "";
+            display: block; 
+            margin-left:10px; 
+            width: 8%; 
+            padding-top: 10px;
+            border-bottom: 3px solid #ef2853; 
+        }
+
+        .courses{
+            
+            // width: 100%;
+            // max-height: 300px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            // justify-content: center;
+            // flex-wrap: nowrap;
+            // flex-direction: row;
+          
+                    
+                }
