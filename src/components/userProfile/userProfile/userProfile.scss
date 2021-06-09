@@ -1,0 +1,32 @@
+#userAccountContainer{
+    margin: 5% 5% 5% 3%;
+    // text-align: center;
+    width:80%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    max-height: 65vh;
+}
+
+.userProfileContainer{
+    width: 70%;
+    margin: 5px 5px 5px 0;
+    background-color: white;
+    justify-self: start;
+    box-shadow: 0 0 5px grey;
+    ul {
+        display: flex;
+        flex-direction: column;
+        // margin: 10% 0 0 6%;
+        list-style: none;
+        text-align: left;
+        li {
+            margin: 5% auto;
+            img {
+                border-radius: 50%;
+                border: 1px solid silver;
+                margin-top: 0;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}

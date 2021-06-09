@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { checkCookies } from "./store/actions";
+import cookie from "react-cookies";
+import { useDispatch } from "react-redux";
+import Routes from "./routes";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+	const dispatch = useDispatch();
+	
+	useEffect(() => {
+        const tokenAndUser = cookie.load("auth");
+		dispatch(checkCookies(tokenAndUser));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	return (
+		<>
+			<Routes />
+		</>
+	);
 }
 
 export default App;

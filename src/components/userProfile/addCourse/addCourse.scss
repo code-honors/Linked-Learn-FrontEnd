@@ -1,0 +1,57 @@
+#userAccountContainer{
+    margin: 5% 5% 5% 3%;
+    // text-align: center;
+    width:80%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    max-height: 65vh;
+}
+
+.addCourseFormDiv {
+    width: 90%;
+    margin: 5px 5px 5px 0;
+    background-color: white;
+    box-shadow: 0 0 5px grey;
+
+    form {
+        margin: 6% auto;
+        width:80%;
+
+        input {
+            background-color: white;
+            font-size: larger;
+            &:active,&:focus {
+                border: 1px solid black;
+                box-shadow: none !important;
+            }
+        }
+
+        button, input{
+            border-radius: 0;
+        }
+
+        #courseDescription {
+            border-radius: 0;
+            &:active,&:focus {
+                border: 1px solid black;
+                box-shadow: none !important;
+            }
+        }
+
+        button{
+            width: 100%;
+            background-color: #FF1949;
+            font-weight: bolder;
+            border: none;
+            &:hover {
+                background-color: #FF1949;
+            }
+            &:active, &:focus {
+                background-color: #FF1949 !important;
+                outline: none !important;
+                border: none !important;
+                box-shadow: 0 0 5px #FF1949 !important;
+            }
+        }
+    }
+}

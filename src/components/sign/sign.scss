@@ -1,0 +1,84 @@
+.container {
+	text-align: center;
+	margin-top: 30px;
+    width: 20%;
+    border: black 1px;
+}
+
+#fromSwitch {
+	margin-bottom: 4%;
+	button {
+		font-weight: bolder;
+		background-color: #ef2853;
+		border: 1px solid #b91f40;
+		&:focus,&:active {
+			box-shadow: 0 0 5px #ef2853;
+		}
+	}
+}
+
+.signIn {
+    width:26% ;
+    height:62%;
+    background:rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position: relative;
+    top: 20%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.sign {
+	width: 22%;
+	height: 62%;
+	background-color: #ef2853;
+	border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	position: relative;
+    top: 20%;
+}
+
+.join {
+	color: #fff;
+	font-size: 3.7rem;
+	font-family:Verdana, Geneva, Tahoma, sans-serif ;
+	padding: 20% 12%;
+	text-align: center;
+}
+
+.forms {
+
+	input, select {
+
+		color: rgb(0, 0, 0);
+		&:active,&:focus{
+			transition: 0.5s;
+			border: 1px solid black;
+			box-shadow: none;
+		}
+	}
+
+	#showPasswordCheckbox:checked{
+		background-color: #FF1949;
+	}
+
+	button {
+		margin: auto;
+		width: 80%;
+		background-color: #ef2853;
+		font-weight: bolder;
+		border: 1px solid #b91f40;
+		&:hover{
+			background-color: #b91f40;
+			border: 1px solid #b91f40;
+		}
+		&:active, &:focus{
+			border: 1px solid #b91f40 !important;
+			background-color: #b91f40 !important;
+			box-shadow: 0 0 3px #ef2853 !important;
+		}
+
+	}
+}
