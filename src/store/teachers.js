@@ -6,6 +6,7 @@ let initialState = {
     let { type, payload } = action;
     switch (type) {
       case 'GET_T':
+        console.log(1)
         return { teachers: payload };
       default:
         return state;

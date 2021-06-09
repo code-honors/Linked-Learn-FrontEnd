@@ -9,9 +9,32 @@ import Slideshow from './slideShow';
 import Support from './support';
 import './style/dashboard.scss';
 import Footer2 from "../footer/footer2";
-
+import { Link, useHistory } from "react-router-dom";
+import { signOut } from "../../store/actions";
+import { useDispatch, useSelector } from "react-redux";
+import cookie from "react-cookies";
 
 function Dashboard(){
+  
+	let history = useHistory();
+	const dispatch = useDispatch();
+
+	const handleLogout = () => {
+		// console.log(5)
+		cookie.remove('auth', {path:'/'});
+		dispatch(signOut())
+	}
+		const state = useSelector(state => {
+		return {
+			user: state.signIn.user,
+			loggedIn: state.signIn.loggedIn,
+		};
+	});
+
+	useEffect(()=> {
+		if(state.loggedIn === false) history.push('/');
+	}, [state.loggedIn]);
+  
 	return (
 <div>
 	<SidePar/>

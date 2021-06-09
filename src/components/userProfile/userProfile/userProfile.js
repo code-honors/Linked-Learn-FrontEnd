@@ -1,9 +1,13 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {checkCookies} from "../../../store/actions";
+import cookie from 'react-cookies';
+import {useEffect} from 'react';
 import { If, Then, Else } from "react-if";
 import Nav from "../nav/nav";
 import "./userProfile.scss";
 
 function UserProfile(props) {
+    let dispatch = useDispatch();
 	const state = useSelector((state) => {
 		return {
 			user: state.signIn.user,
@@ -11,6 +15,13 @@ function UserProfile(props) {
 		};
 	});
     console.log({state});
+    useEffect(() => {
+        const tokenAndUser = cookie.load("auth");
+		console.log('passed')
+		// console.log(tokenAndUser);
+		dispatch(checkCookies(tokenAndUser));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	// console.log('user',state.user);
     // console.log('logged in',state.loggedIn);

@@ -11,7 +11,7 @@ export const signUpAuth = (username, email, password, role) => {
 				.post(`${api}/auth/signup`)
 				.send({ username, email, password, role });
 			const { user, token } = response.body;
-			cookie.save("auth", token);
+			cookie.save("auth", token, { path: '/' });
 			dispatch(signIn(user));
 		} catch (error) {
 			console.error(error);
@@ -19,65 +19,65 @@ export const signUpAuth = (username, email, password, role) => {
 	};
 };
 
-export const getRemoteData = function (api , data) {
-	console.log('step 2: actions first', api);
+export const getRemoteData = function (api, data) {
 	return (dispatch) => {
-		console.log('step 3: actions second', dispatch);
 		return superagent
-		.get(api)
-		.then((res) => {
-			console.log('step 4: actions third', res.body);
-			// eslint-disable-next-line default-case
-			switch(data){
-				case 'courses':
-					dispatch(getCourses({ courses: res.body }));
-					break;
-					case 'teachers':
+			.get(api)
+			.then((res) => {
+				// eslint-disable-next-line default-case
+				switch (data) {
+					case "courses":
+						dispatch(getCourses({ courses: res.body }));
+						break;
+					case "teachers":
 						dispatch(getTeachers({ teachers: res.body }));
 						break;
-						case 'tProfile':
-							dispatch(getProfile({ profile: res.body }));
-							break;
-							case 'tCourses':
-								dispatch(getTeacherCourses({ tCourses: res.body }));
-								break;
-								
-							}
-						})
-						.catch((e) => console.error(e.message));
-					};
-				};
-				
-				export const getCourses = ({ courses }) => {
-					console.log('step 5: courses action', courses);
-					return {
-						type: 'GET_C',
-						payload: courses,
-					};
-				};
-				
-				export const checkCookies = (tokenAndUser) => {
-					return (dispatch) => {
-						try {
-							const user = jwt.verify(tokenAndUser.token, "ePzscxrRn7toGZ1Hrh4OICHV");
-							console.log('check')
-							cookie.save("auth", tokenAndUser);
-							dispatch(signIn(tokenAndUser.user));
-						} catch (error) {
-							console.error("validation error", error);
-						}
-					};
-				};
-				
-				export const signInAuth = (username, password) => {
-					return (dispatch) => {
-						setLogin();
-						const validateToken = (response) => {
-							try {
-                // console.log({responseUser})
-				const user = jwt.verify(response.token, "ePzscxrRn7toGZ1Hrh4OICHV");
-				console.log('sign in')
-				cookie.save("auth", response);
+					case "tProfile":
+						dispatch(getProfile({ profile: res.body }));
+						break;
+					case "tCourses":
+						dispatch(getTeacherCourses({ tCourses: res.body }));
+						break;
+				}
+			})
+			.catch((e) => console.error(e.message));
+	};
+};
+
+export const getCourses = ({ courses }) => {
+	return {
+		type: "GET_C",
+		payload: courses,
+	};
+};
+
+export const checkCookies = (tokenAndUser) => {
+	return (dispatch) => {
+		try {
+			const user = jwt.verify(
+				tokenAndUser.token,
+				"ePzscxrRn7toGZ1Hrh4OICHV"
+			);
+
+			cookie.save("auth", tokenAndUser, {path:'/'});
+			dispatch(signIn(tokenAndUser.user));
+		} catch (error) {
+			console.error("validation error", error);
+		}
+	};
+};
+
+export const signInAuth = (username, password) => {
+	return (dispatch) => {
+		setLogin();
+		const validateToken = (response) => {
+			try {
+				const user = jwt.verify(
+					response.token,
+					"ePzscxrRn7toGZ1Hrh4OICHV"
+				);
+				//cookie.save('token', token, { path: '/' });
+				cookie.save("auth", response, { path: "/" });
 				// cookie.save('user', responseUser);
 				dispatch(signIn(response.user));
 			} catch (error) {
@@ -97,7 +97,7 @@ export const getRemoteData = function (api , data) {
 								"utf8"
 							).toString("base64")
 					);
-                                console.log( 'response.body.user', response.body)
+
 				validateToken(response.body);
 			} catch (error) {
 				console.error("Login error", error);
@@ -107,56 +107,51 @@ export const getRemoteData = function (api , data) {
 };
 
 export const removeCookie = () => {
-	return(dispatch) => {
-		console.log(1);
-		cookie.save('auth', null);
-		if(cookie.load('auth')) console.log(2)
-		dispatch(signOut())
-	}
-}
+	return (dispatch) => {
+		cookie.save("auth", null, { path: "/" });
+		if (cookie.load("auth")) dispatch(signOut());
+	};
+};
 
 export const signOut = () => {
-    // cookie.remove('auth');
+	// cookie.remove('auth');
 	return {
 		type: "SIGN-OUT",
 		payload: null,
 	};
-}
-  
+};
+
 export const getTeacherCourses = ({ tCourses }) => {
-  console.log('step 5: courses action', tCourses);
-  return {
-    type: 'GET_TC',
-    payload: tCourses,
-  };
+	return {
+		type: "GET_TC",
+		payload: tCourses,
+	};
 };
 
 export const getTeachers = ({ teachers }) => {
-  console.log('step 5: teachers action', teachers);
-  return {
-    type: 'GET_T',
-    payload: teachers,
-  };
+	return {
+		type: "GET_T",
+		payload: teachers,
+	};
 };
 
 export const getProfile = ({ profile }) => {
-  console.log('step 5: profile action', profile);
-  return {
-    type: 'GET_P',
-    payload: profile,
-  };
+	return {
+		type: "GET_P",
+		payload: profile,
+	};
 };
 
 export const filter = (category) => {
-  return {
-    type: 'FILTER',
-    payload: category,
-  };
+	return {
+		type: "FILTER",
+		payload: category,
+	};
 };
 
 const signIn = (user) => {
-    return {
-        type: "SIGN-IN",
-        payload: user,
-    };
+	return {
+		type: "SIGN-IN",
+		payload: user,
+	};
 };
