@@ -1,23 +1,14 @@
-#userAccountContainer{
-    margin: 5% 5% 5% 3%;
-    // text-align: center;
-    width:80%;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    max-height: 65vh;
-}
-
 .userNavDiv {
-    position: sticky;
-    top: 0;
-    width: 17em;
+    // position: sticky;
+    // top: 0;
+    width: 15em;
     margin: 5px 0px 5px 5px;
     justify-self: end;
     background-color: black;
     box-shadow: 0 0 5px black;
     text-align: center;
     // height: 60vh;
-    // max-height: 65vh;
+    max-height: 65vh;
     ul {
         display: flex;
         flex-direction: column;
@@ -29,6 +20,14 @@
             margin-left: -2%;
             // margin: 5% 2% 5% -10%;
             padding: 1em 0.5em;
+            a.active {
+                color: #FF1949;
+                text-indent: -20px;
+                &:before {
+                    opacity: 1;
+                    text-indent: 0px;
+                }
+            }  
             span {
                 display: inline;
                 text-decoration: none;
@@ -49,17 +48,26 @@
                     &:before {
                         opacity: 1;
                         text-indent: 0px;
-                      }
+                    }
                 }
-                &.active {
-                    color: #FF1949;
+                .active{
+                    color: black;
                     text-indent: -20px;
                     &:before {
                         opacity: 1;
                         text-indent: 0px;
                     }
-                }  
+                }
             }
         }
     }    
 }
+
+.active {
+    color: #FF1949;
+    text-indent: -20px;
+    &:before {
+        opacity: 1;
+        text-indent: 0px;
+    }
+}  

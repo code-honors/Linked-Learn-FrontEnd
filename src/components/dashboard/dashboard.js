@@ -34,26 +34,26 @@ import HeadsetIcon from "@material-ui/icons/Headset";
 import HomeIcon from "@material-ui/icons/Home";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
-import { Link, useHistory } from "react-router-dom";
-import { removeCookie, signOut } from "../../store/actions";
-import { useDispatch, useSelector } from "react-redux";
-import cookie from "react-cookies";
+// import { Link, useHistory } from "react-router-dom";
+// import { signOut } from "../../store/actions";
+// import { useDispatch, useSelector } from "react-redux";
+// import cookie from "react-cookies";
 
 function Dashboard() {
-	let history = useHistory();
-	const dispatch = useDispatch();
+	// let history = useHistory();
+	// const dispatch = useDispatch();
 
-	const handleLogout = () => {
-		console.log(5)
-		cookie.remove('auth', {path:'/'});
-		dispatch(signOut())
-	}
-	const state = useSelector(state => {
-		return {
-			user: state.signIn.user,
-			loggedIn: state.signIn.loggedIn
-		};
-	});
+	// const handleLogout = () => {
+	// 	// console.log(5)
+	// 	cookie.remove('auth', {path:'/'});
+	// 	dispatch(signOut())
+	// }
+	// 	const state = useSelector(state => {
+	// 	return {
+	// 		user: state.signIn.user,
+	// 		loggedIn: state.signIn.loggedIn,
+	// 	};
+	// });
 
 	useEffect(() => {
 		AOS.init({
@@ -63,6 +63,7 @@ function Dashboard() {
 			delay: 100,
 		});
 		AOS.refresh();
+
 	}, []);
 
 	const [collapsed, setCollapsed] = useState(false);
@@ -70,14 +71,14 @@ function Dashboard() {
 		setCollapsed(checked);
 	};
 	const [index, setIndex] = useState(0);
-
+	// console.log('dashboard',{state})
 	const handleSelect = (selectedIndex, e) => {
 		setIndex(selectedIndex);
 	};
-
-	useEffect(()=> {
-		if(state.loggedIn === false) history.push('/');
-	}, []);
+	
+	// useEffect(()=> {
+	// 	if(state.loggedIn === false) history.push('/');
+	// }, [state.loggedIn]);
 
 	return (
 		<>
@@ -100,7 +101,7 @@ function Dashboard() {
 				</div>
 				<Sticky>
 					<div style={{ height: "100vh", zIndex: "10" }}>
-						<ProSidebar collapsed={false}>
+						<ProSidebar collapsed={false} style={{width:"20%"}} >
 							<SidebarHeader style={{ height: "10vh" }}>
 								<img
 									style={{
@@ -115,7 +116,7 @@ function Dashboard() {
 							</SidebarHeader>
 							<Menu iconShape="circle">
 								<MenuItem
-									style={{ marginTop: "40%" }}
+									style={{ marginTop: "25%" }}
 									icon={<FaGem />}
 								>
 									{" "}
@@ -135,7 +136,7 @@ function Dashboard() {
 								<MenuItem icon={<FaUser />} title="Profile">
 									{" "}
 									Profile
-									<Link to="/profile/" />
+									<Link to="/user/profile" />
 								</MenuItem>
 								<MenuItem icon={<FaHandshake />}>
 									<Link to="/aboutus" />
@@ -169,7 +170,7 @@ function Dashboard() {
 					className="sub5"
 					style={{
 						marginTop: "10%",
-						marginLeft: "5%",
+						marginLeft: "4%",
 						marginBottom: "-2%",
 					}}
 				>

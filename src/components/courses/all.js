@@ -7,9 +7,9 @@ import './courses.scss';
 const api = 'https://linked-learn.herokuapp.com/courses';
 
 const Courses = (props) => {
-  console.log(props.courses);
+  // console.log(props.courses);
   useEffect(() => {
-    console.log('step 1: courses component', api);
+    // console.log('step 1: courses component', api);
     props.getRemoteData(api,'courses');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

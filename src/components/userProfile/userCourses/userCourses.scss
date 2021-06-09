@@ -8,6 +8,7 @@
 }
 
 .userCoursesDiv {
+    overflow-y: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -19,7 +20,7 @@
     .card{
         box-shadow: 0 0 5px grey;
         margin: 4% 2%;
-        #remove {
+        .remove {
             a{
                 color: rgba(255,0,0,0.8);
                 &:hover{ 

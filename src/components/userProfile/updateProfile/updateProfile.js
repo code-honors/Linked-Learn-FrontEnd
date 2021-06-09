@@ -30,6 +30,13 @@ function UserUpdateInfo(props) {
 			? (document.querySelector("#password").type = "text")
 			: (document.querySelector("#password").type = "password");
 	};
+
+	useEffect(() => {
+		// document.querySelector('#username').value = state.user.username;
+		// document.querySelector('#email').value = state.user.email;
+		// document.querySelector('#rolesU').value = state.user.role;
+	}, []);
+
 	return (
 		<main id="userAccountContainer">
 			<If condition={state.loggedIn}>
@@ -48,7 +55,6 @@ function UserUpdateInfo(props) {
 									<Form.Control
 										id="username"
 										type="text"
-										value={state.user.username}
 										required
 									/>
 								</Form.Group>
@@ -58,22 +64,10 @@ function UserUpdateInfo(props) {
 									<Form.Control
 										id="email"
 										type="email"
-										value={state.user.email}
 										required
 									/>
 								</Form.Group>
 							</Form.Row>
-
-							<Form.Group as={Col} controlId="formGridState">
-								<Form.Control id="rolesU" as="select">
-									<option disabled selected>
-										{`Your Role is ${state.user.role}`}
-									</option>
-									<option>Teacher</option>
-									<option>Student</option>
-								</Form.Control>
-							</Form.Group>
-
 							<Form.Group>
 								<Form.Label>Password</Form.Label>
 								<Form.Control

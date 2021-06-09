@@ -1,6 +1,5 @@
 import Card from "react-bootstrap/Card";
 import { If, Then, Else } from "react-if";
-// import Button from "react-bootstrap/Button";
 import Nav from "../nav/nav";
 import { useSelector } from "react-redux";
 import "./userCourses.scss";
@@ -53,11 +52,6 @@ function UserCourses(props) {
 									/>
 									<Card.Body>
 										<Card.Title>{course.title}</Card.Title>
-										<Card.Text>
-											Some quick example text to build on
-											the card title and make up the bulk
-											of the card's content.
-										</Card.Text>
 									</Card.Body>
 									<Card.Body>
 										<Card.Link href="#">

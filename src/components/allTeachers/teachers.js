@@ -28,9 +28,9 @@ const useStyles = makeStyles((theme) => ({
 const Teachers = (props) => {
   
     const classes = useStyles();
-  console.log('teachers',props.teachers);
+  // console.log('teachers',props.teachers);
   useEffect(() => {
-    console.log('step 1: teachers', api);
+    // console.log('step 1: teachers', api);
     props.getRemoteData(api,'teachers');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
