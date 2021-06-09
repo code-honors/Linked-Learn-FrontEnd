@@ -71,7 +71,7 @@ function Navbar(props) {
 								<NavLink to="/aboutus">ABOUT US</NavLink>
 							</li>
 							<li>
-								<NavLink to="/teacher/profile">PROFILE</NavLink>
+								<NavLink to="/user/profile">PROFILE</NavLink>
 							</li>
 						</ul>
 						<div className={classes.root}>
