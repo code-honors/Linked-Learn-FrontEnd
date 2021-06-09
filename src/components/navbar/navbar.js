@@ -94,6 +94,7 @@ function Navbar(props) {
                         <NavLink to="/user/profile">
 							<Avatar alt={state.user.username} src={state.user.profilePic} />
                         </NavLink>
+
 						</div>
 					</Toolbar>
 				</AppBar>
