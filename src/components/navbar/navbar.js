@@ -1,6 +1,6 @@
 import "./navbar.scss";
 // import Home from "../home/home";
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -10,7 +10,10 @@ import Slide from "@material-ui/core/Slide";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
+import cookie from "react-cookies";
+import {signOut} from "../../store/actions";
+import {useDispatch} from "react-redux";
 import logo from './logo-color.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -39,11 +42,24 @@ HideOnScroll.propTypes = {
 };
 
 function Navbar(props) {
+    let dispatch = useDispatch();
+    let history = useHistory();
     const state = useSelector(state => {
         return {
-            user:state.signIn.user
+            user:state.signIn.user,
+            loggedIn:state.signIn.loggedIn
         }
-    })
+    });
+
+    const handleLogout = () => {
+		cookie.remove("auth", { path: "/" });
+		dispatch(signOut());
+	};
+
+    useEffect(() => {
+        if(!state.loggedIn) history.push('/')
+    }, [state.loggedIn])
+
 	const classes = useStyles();
 	return (
 		<React.Fragment>
@@ -70,12 +86,14 @@ function Navbar(props) {
 							<li>
 								<NavLink to="/aboutus">ABOUT US</NavLink>
 							</li>
-							<li>
-								<NavLink to="/user/profile">PROFILE</NavLink>
+							<li id="logOut" onClick={handleLogout} >
+								<a href="#">LOG OUT</a> 
 							</li>
 						</ul>
 						<div className={classes.root}>
-							<Avatar alt="Ruba Banat" src={state.user.profilePic} />
+                        <NavLink to="/user/profile">
+							<Avatar alt={state.user.username} src={state.user.profilePic} />
+                        </NavLink>
 						</div>
 					</Toolbar>
 				</AppBar>

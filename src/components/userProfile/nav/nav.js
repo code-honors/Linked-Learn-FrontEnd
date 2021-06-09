@@ -1,9 +1,8 @@
-import { NavLink, useRouteMatch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ACL from "../../acl/acl";
 import "./nav.scss";
 
 function Nav() {
-	let { url } = useRouteMatch();
 	return (
 		<div className="userNavDiv">
 			<ul>

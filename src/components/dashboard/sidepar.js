@@ -17,8 +17,9 @@ import {
 import Sticky from "react-stickynode";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import cookie from 'react-cookies';
-import {signOut} from '../../store/actions';
+import cookie from "react-cookies";
+import { signOut } from "../../store/actions";
+import ACL from "../acl/acl";
 
 function SidePar() {
 	const dispatch = useDispatch();
@@ -46,7 +47,6 @@ function SidePar() {
 							/>
 						</SidebarHeader>
 						<Menu iconShape="circle">
-
 							<MenuItem
 								style={{ marginTop: "40%" }}
 								icon={<FaHeart />}
@@ -61,19 +61,22 @@ function SidePar() {
 								Profile
 								<Link to="/user/profile" />
 							</MenuItem>
-							<MenuItem
-								icon={<FaGem />}
-							>
-								{" "}
-								Chat
-								<Link to="/join" />
-							</MenuItem>
+								<MenuItem icon={<FaGem />}>
+									{" "}
+									Chat
+									<Link to="/join" />
+								</MenuItem>
 							<MenuItem icon={<FaHandshake />}>
 								<Link to="/aboutus" />
 								Get To Know us
 							</MenuItem>
 
-							<MenuItem onClick={handleLogout} icon={<FaSignOutAlt />}>Log Out</MenuItem>
+							<MenuItem
+								onClick={handleLogout}
+								icon={<FaSignOutAlt />}
+							>
+								Log Out
+							</MenuItem>
 							<SidebarFooter
 								style={{
 									position: "absolute",

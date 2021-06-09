@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { getRemoteData } from '../../store/actions';
+import {Link} from "react-router-dom"
 import { useEffect } from 'react';
 import { Card, Figure } from 'react-bootstrap';
 import './courses.scss';
@@ -33,7 +34,7 @@ const Courses = (props) => {
                 <Card.Text>{course.category}</Card.Text>
                 <Figure.Caption className="courseDescription" >{course.description}</Figure.Caption>
                 <Card.Link
-                  href={`/courses/${course.id}`}
+                  href={`/course`}
                   style={{ float: 'left', color:'black'}}
                 >
                   Details
