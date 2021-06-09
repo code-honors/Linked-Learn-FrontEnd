@@ -32,7 +32,7 @@ export const getRemoteData = function (api , data) {
 				case 'courses':
 					dispatch(getCourses({ courses: res.body }));
 					break;
-					case 'tachers':
+					case 'teachers':
 						dispatch(getTeachers({ teachers: res.body }));
 						break;
 						case 'tProfile':

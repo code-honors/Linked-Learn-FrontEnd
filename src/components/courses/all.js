@@ -25,7 +25,7 @@ const Courses = (props) => {
             <Card
               className="card"
               key={course.id}
-              style={{ width: '18rem', height: '68.2%' }}
+              style={{ width: '18rem', height: '85vh' }}
             >
               <Card.Img variant="top" src={course.img} />
               <Card.Body>

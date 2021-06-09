@@ -11,12 +11,13 @@ const api = 'https://linked-learn.herokuapp.com/all/teachers';
 
 const useStyles = makeStyles((theme) => ({
       root: {
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr',
         '& > *': {
           margin: theme.spacing(3),
           
         },
-        flexDirection:'column',
+        // flexDirection:'column',
         justifyContent:'center'
       },
       large: {
@@ -39,20 +40,20 @@ const Teachers = (props) => {
   return (
     <>
     
-      <Container className='teachers-container'>
+      {/* <Container className='teachers-container'> */}
         {teachers.map((teacher) => {
           return (
-          <div className='teachers'>
+          // <div className='teachers'>
             <div className={classes.root}>
              <Link to={`/teacher/profile/${teacher.id}`}> 
             <Avatar alt={teacher.firstname} src={teacher.profilepic} className={classes.large} /> <br/>
              </Link>
             <h4>{teacher.firstname} {teacher.lastname}</h4>
           </div>
-          </div>
+          // </div>
           );
         })}
-      </Container>
+      {/* </Container> */}
     </>
   );
 };
