@@ -1,4 +1,4 @@
-import { Switch, Route, useParams } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Auth from '../components/sign'
 import NotFound from '../components/NotFound';
 import Home from '../components/home/home';
@@ -44,11 +44,6 @@ export default function Routes() {
 				exact
 				path={`/user/courses`}
 				component={UserCourses}
-			/>
-			<Route
-				exact
-				path={`/user/events`}
-				component={UserEvents}
 			/>
 			<Route
 				exact

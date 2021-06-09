@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { signUpAuth } from "../../store/actions";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -14,16 +14,6 @@ function SignUpForm() {
 			? (document.querySelector(".password").type = "text")
 			: (document.querySelector(".password").type = "password");
 	};
-
-	// const state = useSelector((state) => {
-	// 	return {
-	// 		user: state.signIn.user,
-	// 		loggedIn: state.signIn.loggedIn,
-	// 	};
-	// });
-
-	// console.log("user =====", state.user);
-	// console.log("loggedIn =====", state.loggedIn);
 
 	const handleSubmitSignUp = (event) => {
 		event.preventDefault();
@@ -83,7 +73,7 @@ function SignUpForm() {
 				</Form.Group>
 
 				<Button variant="primary" type="submit">
-					Submit
+					Sign Up
 				</Button>
 			</Form>
 		</div>

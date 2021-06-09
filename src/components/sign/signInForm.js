@@ -71,7 +71,7 @@ function SignInForm(props) {
 						onChange={handleShowPassword}
 					/>
 				</Form.Group>
-				<Button type="submit">Submit</Button>
+				<Button type="submit">Sign In</Button>
 			</Form>
 		</div>
 	);

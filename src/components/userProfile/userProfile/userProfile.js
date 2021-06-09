@@ -16,17 +16,12 @@ function UserProfile(props) {
 			loggedIn: state.signIn.loggedIn,
 		};
 	});
-	console.log({ state });
 	useEffect(() => {
 		const tokenAndUser = cookie.load("auth");
 		console.log("passed");
-		// console.log(tokenAndUser);
 		dispatch(checkCookies(tokenAndUser));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-
-	// console.log('user',state.user);
-	// console.log('logged in',state.loggedIn);
 
 	return (
 		<>

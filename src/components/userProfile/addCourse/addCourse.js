@@ -10,10 +10,10 @@ import "./addCourse.scss";
 function AddCourse() {
 	const handleSubmitAddCourse = (event) => {
 		event.preventDefault();
-		let name = event.target.name.value;
-		let img = event.target.img.value;
-		let category = event.target.category.value;
-		let classes = event.target.classes.value;
+		// let name = event.target.name.value;
+		// let img = event.target.img.value;
+		// let category = event.target.category.value;
+		// let classes = event.target.classes.value;
 	};
 
 	const state = useSelector((state) => {

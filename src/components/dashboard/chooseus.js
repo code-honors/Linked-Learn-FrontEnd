@@ -19,7 +19,7 @@ function Chooseus(){
         <>
         <div className="rate" data-aos="fade-right">
 				<div className="whyChoose">
-					<h2 className="sub5">
+					<h2 className="sub5" id="chooseUsUnderLine">
 						{" "}
 						<strong>Why Choose US</strong>{" "}
 					</h2>{" "}
