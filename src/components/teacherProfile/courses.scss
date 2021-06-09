@@ -1,4 +1,4 @@
-.products {
+.teacherClass {
     display: flex;
     // justify-content: center; 
     flex-wrap: wrap;
@@ -7,14 +7,12 @@
     padding: 50px;
 }
 
-.card{
+.cardInfo{
         width: 100%;
         height: 50%;
         padding: 5px;
         margin: 20px 20px;
         border: #ffffff00;
-        // box-shadow: 0 0 #585858, 0 0 #585858, 0 0 10px #585858;
-        // opacity: 0.6;
         transition: 0.3s;
     }
   .card1{
@@ -44,23 +42,3 @@
   a:hover{
     color:black !important;
   }
-// .img{
-//     width: 12em;  
-//     height: 8em;
-// }
-// .products .cards{
-//     width: 100%;
-//     height: 50%;
-//     padding: 20px;
-//     margin: 20px 50px;
-//     box-shadow: 0 0 #585858, 0 0 #585858, 0 0 10px #585858;
-// }
-// .btnn{
-//     display: flex;
-//     justify-content: space-around;
-// button{
-//     background-color: none;
-//     color: darkblue;
-//     font-size: 12px;
-// }
-// }

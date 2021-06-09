@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getRemoteData } from '../../store/actions';
 import { NavLink, useParams } from 'react-router-dom';
-import './courses.scss';
 import { Card, Figure, Container } from 'react-bootstrap';
 import Footer from '../footer/footer';
 import Navbar from '../navbar/navbar';
+import './courses.scss';
 var { SocialIcon } = require('react-social-icons');
 
 const api = 'https://linked-learn.herokuapp.com/teacher';
@@ -23,15 +23,13 @@ function Courses(props) {
   return (
     <>
       <Navbar />
-      <section className="products">
+      <section className="teacherClass" >
         <Figure style={{ marginRight: '20px' }}>
           <Figure.Image
             width={300}
             height={400}
             alt="171x180"
-            src={
-              profile.profilepic /*|| `http://placehold.jp/300x400.png?text=${profile.firstname}`*/
-            }
+            src={profile.profilepic}
           />
           <Card.Title>
             {profile.firstname} {profile.lastname}
@@ -86,13 +84,13 @@ function Courses(props) {
               </li>
             </ul>
           </nav>
-          <Container className="courses-container">
+          <div className="div-cont" >
             {courses.length > 0 ? courses.map((course) => {
               return (
                 <Card
-                  className="card"
+                  className="cardInfo"
                   key={course.id}
-                  style={{ width: '18rem', height: '68.2%' }}
+                  style={{ width: '25rem', height: '63%' }}
                 >
                   <Card.Img variant="top" src={course.img} />
                   <Card.Body>
@@ -114,8 +112,8 @@ function Courses(props) {
                   </Card.Body>
                 </Card>
               );
-            }): <p>There is nothing to show</p>}
-          </Container>
+            }) : <p>There is nothing to show</p>}
+          </div>
         </div>
       </section>
       <Footer />

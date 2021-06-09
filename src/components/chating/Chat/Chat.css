@@ -9,12 +9,13 @@
   .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     background: #FFFFFF;
     border-radius: 8px;
     height: 80%;
-    width: 60% !important;
+    width: 64% !important;
     padding: 0% !important;
+    margin-left: 17% !important;
   }
   
   @media (min-width: 320px) and (max-width: 480px) {

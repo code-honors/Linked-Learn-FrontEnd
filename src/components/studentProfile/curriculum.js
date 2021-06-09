@@ -2,7 +2,7 @@ import React from 'react';
 // import { NavLink } from 'react-router-dom';
 import Footer from '../footer/footer';
 import Navbar from '../navbar/navbar';
-import './course.scss'
+import './course.scss';
 import { Card, Figure } from 'react-bootstrap';
 var { SocialIcon } = require('react-social-icons');
 
