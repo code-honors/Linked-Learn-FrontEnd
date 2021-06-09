@@ -49,13 +49,9 @@
 }
 
 .forms {
-	input {
-		// margin: auto;
-		// width:85%;	
-	}
+
 	input, select {
-		// margin: auto;
-		// width:80%;
+
 		color: rgb(0, 0, 0);
 		&:active,&:focus{
 			transition: 0.5s;

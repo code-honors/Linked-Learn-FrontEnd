@@ -6,21 +6,22 @@ import './TextContainer.css';
 
 const TextContainer = ({ users }) => (
   <div className="textContainer">
-   
+
     {
       users
         ? (
           <div className="people">
-            <h3 className="infoBar2">Online:</h3>
+            <h4 className="infoBar2">Online</h4>
             <div className="activeContainer">
-              <h2 >
-                {users.map(({name}) => (
+              <h4 >
+                {users.map(({ name }) => (
                   <div key={name} className="activeItem">
+                    <img style={{ paddingRight: "8px" }} alt="Online Icon" src={onlineIcon} />
                     {name}
-                    <img alt="Online Icon" src={onlineIcon}/>
+
                   </div>
                 ))}
-              </h2>
+              </h4>
             </div>
           </div>
         )

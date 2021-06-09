@@ -1,5 +1,5 @@
 import "./navbar.scss";
-import Home from "../home/home";
+// import Home from "../home/home";
 import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
@@ -11,7 +11,7 @@ import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import logo from "./logo-color.png";
+import logo from './logo-color.png';
 
 const useStyles = makeStyles((theme) => ({
     
